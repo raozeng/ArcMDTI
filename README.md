@@ -2,6 +2,10 @@
 
 Official PyTorch implementation, benchmark datasets, and complete experimental results for **ArcMDTI** (*Structure-Informed Angular-Margin Learning with Bidirectional Cross-Attention for Drug–Target Interaction Prediction*).
 
+<p align="center">
+  <img src="sci_plots_comparison/Figure1_ArcMDTI_Framework_clean.png" alt="ArcMDTI Architecture Overview" width="96%"/>
+</p>
+
 ---
 
 ## 1. Overview
@@ -10,6 +14,10 @@ Official PyTorch implementation, benchmark datasets, and complete experimental r
 1. **Structure-Informed Multi-Scale Hybrid Encoding (`model.py`)**: Integrates residue-level three-state secondary structure priors ($\alpha$-helix `H`, $\beta$-strand `E`, and random coil `C`) derived from NetSurfP-3.0 directly into primary protein sequence representations, and encodes both drug SMILES strings and target protein macromolecules via a hierarchical **CNN–SE–BiLSTM–Transformer** backbone.
 2. **Gated Bidirectional Cross-Attention Fusion (`model.py`)**: Employs symmetric drug-to-protein and protein-to-drug multi-head cross-attention coupled with masked dual-statistic (mean–max) pooling and a learnable sigmoidal feature gate to align ligand pharmacophores with coordinating binding-pocket residues while suppressing non-binding sequence dilution.
 3. **Synergistic Hyperspherical Angular-Margin & Focal Optimization (`LossFunction.py`)**: Projects both joint drug–target representations and class prototypes onto a unit hypersphere ($\mathbb{S}^{d-1}$) and optimizes them jointly under an additive geodesic angular margin (**ArcFace**) and **Focal** hard-example modulation to enforce compact intra-class clusters and a calibrated decision boundary under severe screening imbalance.
+
+<p align="center">
+  <img src="sci_plots_comparison/Figure2_Hypersphere_Margin_Geometry.png" alt="Hyperspherical Angular-Margin Geometry" width="88%"/>
+</p>
 
 ---
 
@@ -38,7 +46,7 @@ ArcMDTI/
 ├── utils/                             # Data loaders, metric calculators, and atomic epoch loggers
 ├── result/                            # Complete 5-fold CV, Cold-Start, Ablation, and Sensitivity experimental results (CSVs/JSONs)
 ├── log/                               # Detailed per-epoch training and validation logs across all benchmarks
-├── sci_plots_comparison/              # Publication figures (ROC, PR, Radar, Cold-Start, UMAP, t-SNE, Case Studies)
+├── sci_plots_comparison/              # Publication figures (Framework, Geometry, ROC, PR, Radar, Cold-Start, UMAP, t-SNE, Case Studies)
 ├── sci_plots_ablation/                # Ablation error-bar and hyperparameter sensitivity figures
 ├── run_all.sh                         # One-click reproducible experiment pipeline
 └── requirements.txt                   # Python package dependencies
