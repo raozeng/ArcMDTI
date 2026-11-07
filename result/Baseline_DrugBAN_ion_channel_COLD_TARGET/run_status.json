@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-30 12:10:24",
+  "stage": "Baseline_DrugBAN_ion_channel_COLD_TARGET",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 30,
+  "total_epochs": 30,
+  "best_val_auc": 0.5300642340081423,
+  "best_epoch": -1
+}

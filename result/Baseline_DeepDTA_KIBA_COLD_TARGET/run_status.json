@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-30 16:31:50",
+  "stage": "Baseline_DeepDTA_KIBA_COLD_TARGET",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 25,
+  "total_epochs": 25,
+  "best_val_auc": 0.8220946299373292,
+  "best_epoch": -1
+}

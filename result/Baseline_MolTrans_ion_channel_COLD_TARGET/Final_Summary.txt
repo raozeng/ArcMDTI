@@ -1,0 +1,9 @@
+MolTrans Baseline on ion_channel (cold_target)
+AUC   : 0.6385 ± 0.0169
+AUPRC : 0.6279 ± 0.0173
+Acc   : 0.5858 ± 0.0114
+F1    : 0.5473 ± 0.0194
+Pre   : 0.6044 ± 0.0204
+Sn    : 0.5019 ± 0.0392
+Sp    : 0.6698 ± 0.0471
+MCC   : 0.1748 ± 0.0241

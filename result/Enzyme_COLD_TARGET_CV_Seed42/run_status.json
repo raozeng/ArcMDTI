@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-28 00:04:58",
+  "stage": "Enzyme_COLD_TARGET_Seed42",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 100,
+  "total_epochs": 100,
+  "best_val_auc": 0.7801656638101848,
+  "best_epoch": -1
+}

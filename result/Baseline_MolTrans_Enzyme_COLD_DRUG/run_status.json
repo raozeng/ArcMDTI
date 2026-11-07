@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-30 17:40:47",
+  "stage": "Baseline_MolTrans_Enzyme_COLD_DRUG",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 25,
+  "total_epochs": 25,
+  "best_val_auc": 0.5985728452309961,
+  "best_epoch": -1
+}

@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-31 04:51:44",
+  "stage": "Ablation_KIBA_no_gate_Seed42",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 100,
+  "total_epochs": 100,
+  "best_val_auc": 0.9382544773238501,
+  "best_epoch": -1
+}

@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-25 02:23:31",
+  "stage": "Sensitivity_GPCRs_s15.0_m0.25_g1.0_Seed42",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 100,
+  "total_epochs": 100,
+  "best_val_auc": 0.7111371251177404,
+  "best_epoch": -1
+}

@@ -1,0 +1,512 @@
+
+==============================================================================
+[2026-10-21 01:40:08] STARTING: Secondary Structure Verification & Generation
+Command: /miniconda3/bin/python3 -u preprocess_ss.py
+==============================================================================
+Error: File not found: ./ion_channel.fasta
+
+==============================================================================
+[2026-10-21 01:40:08] STARTING: 5-Fold Warm-Start CV (Davis)
+Command: /miniconda3/bin/python3 -u main.py --dataset Davis
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/main.py", line 4, in <module>
+    from RunModel import run_5_fold_cv
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:12] STARTING: OOF Prediction Verification (Davis)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset Davis
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/predict_oof.py", line 23, in <module>
+    from RunModel import DEVICE, load_trusted_checkpoint
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:14] STARTING: Latent Manifold & Angular Distribution Extraction (Davis)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset Davis
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:16] STARTING: 5-Fold Warm-Start CV (KIBA)
+Command: /miniconda3/bin/python3 -u main.py --dataset KIBA
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/main.py", line 4, in <module>
+    from RunModel import run_5_fold_cv
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:19] STARTING: OOF Prediction Verification (KIBA)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset KIBA
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/predict_oof.py", line 23, in <module>
+    from RunModel import DEVICE, load_trusted_checkpoint
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:22] STARTING: Latent Manifold & Angular Distribution Extraction (KIBA)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset KIBA
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:23] STARTING: 5-Fold Warm-Start CV (DrugBank)
+Command: /miniconda3/bin/python3 -u main.py --dataset DrugBank
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/main.py", line 4, in <module>
+    from RunModel import run_5_fold_cv
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:26] STARTING: OOF Prediction Verification (DrugBank)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset DrugBank
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/predict_oof.py", line 23, in <module>
+    from RunModel import DEVICE, load_trusted_checkpoint
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:29] STARTING: Latent Manifold & Angular Distribution Extraction (DrugBank)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset DrugBank
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:30] STARTING: 5-Fold Warm-Start CV (Enzyme)
+Command: /miniconda3/bin/python3 -u main.py --dataset Enzyme
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/main.py", line 4, in <module>
+    from RunModel import run_5_fold_cv
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:33] STARTING: OOF Prediction Verification (Enzyme)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset Enzyme
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/predict_oof.py", line 23, in <module>
+    from RunModel import DEVICE, load_trusted_checkpoint
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:36] STARTING: Latent Manifold & Angular Distribution Extraction (Enzyme)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset Enzyme
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:37] STARTING: 5-Fold Warm-Start CV (GPCRs)
+Command: /miniconda3/bin/python3 -u main.py --dataset GPCRs
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/main.py", line 4, in <module>
+    from RunModel import run_5_fold_cv
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:40] STARTING: OOF Prediction Verification (GPCRs)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset GPCRs
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/predict_oof.py", line 23, in <module>
+    from RunModel import DEVICE, load_trusted_checkpoint
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:43] STARTING: Latent Manifold & Angular Distribution Extraction (GPCRs)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset GPCRs
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:44] STARTING: 5-Fold Warm-Start CV (ion_channel)
+Command: /miniconda3/bin/python3 -u main.py --dataset ion_channel
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/main.py", line 4, in <module>
+    from RunModel import run_5_fold_cv
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:47] STARTING: OOF Prediction Verification (ion_channel)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset ion_channel
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/predict_oof.py", line 23, in <module>
+    from RunModel import DEVICE, load_trusted_checkpoint
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:50] STARTING: Latent Manifold & Angular Distribution Extraction (ion_channel)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset ion_channel
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:40:51] STARTING: Warm-Start Baseline Models (All 6 Datasets)
+Command: /miniconda3/bin/python3 -u run_all_baselines.py --mode RANDOM
+==============================================================================
+============================================================
+Batch Runner for All Baselines (with Resume Support)
+============================================================
+
+[1/20] [RUN] baseline_DeepDTA.py on Enzyme ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[2/20] [RUN] baseline_DeepDTA.py on GPCRs ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[3/20] [RUN] baseline_DeepDTA.py on ion_channel ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[4/20] [RUN] baseline_DeepDTA.py on Davis ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[5/20] [RUN] baseline_DeepDTA.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[6/20] [RUN] baseline_MPNN.py on Enzyme ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[7/20] [RUN] baseline_MPNN.py on GPCRs ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[8/20] [RUN] baseline_MPNN.py on ion_channel ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[9/20] [RUN] baseline_MPNN.py on Davis ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[10/20] [RUN] baseline_MPNN.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[11/20] [RUN] baseline_MolTrans.py on Enzyme ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[12/20] [RUN] baseline_MolTrans.py on GPCRs ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[13/20] [RUN] baseline_MolTrans.py on ion_channel ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[14/20] [RUN] baseline_MolTrans.py on Davis ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[15/20] [RUN] baseline_MolTrans.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[16/20] [RUN] baseline_DrugBAN.py on Enzyme ...
+  [DONE] OOF -> result/Baseline_DrugBAN_Enzyme/oof_predictions_Enzyme.csv
+
+[17/20] [RUN] baseline_DrugBAN.py on GPCRs ...
+  [DONE] OOF -> result/Baseline_DrugBAN_GPCRs/oof_predictions_GPCRs.csv
+
+[18/20] [RUN] baseline_DrugBAN.py on ion_channel ...
+  [DONE] OOF -> result/Baseline_DrugBAN_ion_channel/oof_predictions_ion_channel.csv
+
+[19/20] [RUN] baseline_DrugBAN.py on Davis ...
+  [DONE] OOF -> result/Baseline_DrugBAN_Davis/oof_predictions_Davis.csv
+
+[20/20] [RUN] baseline_DrugBAN.py on KIBA ...
+  [DONE] OOF -> result/Baseline_DrugBAN_KIBA/oof_predictions_KIBA.csv
+
+============================================================
+All baselines processed! Skipped: 0 | Failed: 15 | Total: 20
+============================================================
+
+==============================================================================
+[2026-10-21 01:41:36] STARTING: Cold-Drug & Cold-Target 5-Fold CV Suite
+Command: /miniconda3/bin/python3 -u run_all_cold.py
+==============================================================================
+========================================================================
+ArcMDTI cold-start runner
+Tasks: 50
+Max retries per task: 2
+========================================================================
+[OVERALL] [------------------------------------]   0.0% (0/50)
+
+[NEXT] 1/50 | ArcMDTI | Enzyme | cold_drug
+========================================================================
+[TASK] ArcMDTI | Enzyme | cold_drug | attempt 1/3
+========================================================================
+[RUN] python run_cold_start.py --dataset Enzyme.txt --split_mode cold_drug --batch_size 64
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_cold_start.py", line 34, in <module>
+    from RunModel import (
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[WARN] ArcMDTI Enzyme cold_drug did not complete. Return code: 1
+[RETRY] Rerunning the same dataset/mode after 60 seconds...
+========================================================================
+[TASK] ArcMDTI | Enzyme | cold_drug | attempt 2/3
+========================================================================
+[RUN] python run_cold_start.py --dataset Enzyme.txt --split_mode cold_drug --batch_size 64
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_cold_start.py", line 34, in <module>
+    from RunModel import (
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[WARN] ArcMDTI Enzyme cold_drug did not complete. Return code: 1
+[RETRY] Rerunning the same dataset/mode after 60 seconds...
+========================================================================
+[TASK] ArcMDTI | Enzyme | cold_drug | attempt 3/3
+========================================================================
+[RUN] python run_cold_start.py --dataset Enzyme.txt --split_mode cold_drug --batch_size 64
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_cold_start.py", line 34, in <module>
+    from RunModel import (
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[WARN] ArcMDTI Enzyme cold_drug did not complete. Return code: 1
+[FAIL] ArcMDTI Enzyme cold_drug still incomplete after 3 attempts.
+
+[STOPPED] Current task failed after retries.
+
+==============================================================================
+[2026-10-21 01:43:43] STARTING: Comprehensive Module, Encoder & Loss Ablation Suite
+Command: /miniconda3/bin/python3 -u run_ablation.py --datasets Davis KIBA GPCRs Enzyme
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_ablation.py", line 39, in <module>
+    from RunModel import (
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:43:46] STARTING: Hyperparameter Sensitivity Analysis (m and s)
+Command: /miniconda3/bin/python3 -u run_sensitivity.py --datasets GPCRs Davis
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_sensitivity.py", line 38, in <module>
+    from RunModel import DEVICE, setup_seed, load_trusted_checkpoint, compute_all_metrics, eval_model, train_epoch
+  File "/data/ArcDTI/code_new/RunModel.py", line 52, in <module>
+    from plot_best_features import generate_sci_ready_dr_plots
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:43:49] STARTING: Best-Fold Feature & Geodesic Angle Extraction (Davis)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset Davis
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:43:50] STARTING: Structure-Guided Cross-Attention Case Study (Davis)
+Command: /miniconda3/bin/python3 -u run_case_study.py --dataset Davis
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_case_study.py", line 23, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:43:52] STARTING: Best-Fold Feature & Geodesic Angle Extraction (GPCRs)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset GPCRs
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/plot_best_features.py", line 19, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:43:54] STARTING: Structure-Guided Cross-Attention Case Study (GPCRs)
+Command: /miniconda3/bin/python3 -u run_case_study.py --dataset GPCRs
+==============================================================================
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/run_case_study.py", line 23, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+==============================================================================
+[2026-10-21 01:43:56] STARTING: Generate Architecture & Hypersphere Diagrams
+Command: /miniconda3/bin/python3 -u make_clean_architecture_figure.py
+==============================================================================
+mkdir -p failed for path /tmp/matplotlib_cache: [Errno 28] No space left on device: '/tmp/matplotlib_cache'
+Matplotlib created a temporary cache directory at /data/ArcDTI/code_new/matplotlib-q3gcup16 because there was an issue with MPLCONFIGDIR (/tmp/matplotlib_cache); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Generated publication-grade vector PDFs: Figure1_ArcMDTI_Framework(.pdf/.png) and Figure2_Hypersphere_Margin_Geometry(.pdf/.png).
+
+==============================================================================
+[2026-10-21 01:44:05] STARTING: Generate Publication Comparison Figures (ROC, PR, Radar)
+Command: /miniconda3/bin/python3 -u make_publication_figures.py
+==============================================================================
+[SKIP] No OOF files found locally for ROC grid; preserving existing plots.
+[SKIP] No OOF files found locally for PR grid; preserving existing plots.
+[SKIP] No projection files found locally for UMAP; preserving existing plots.
+[SKIP] No projection files found locally for t-SNE; preserving existing plots.
+
+==============================================================================
+[2026-10-21 01:44:07] STARTING: Generate Ablation Error-Bar Figures
+Command: /miniconda3/bin/python3 -u make_ablation_errorbar_figures.py
+==============================================================================
+[SKIP] No ablation NPZ files found locally; preserving existing ablation figures.
+
+==============================================================================
+[2026-10-21 01:44:08] STARTING: Generate Loss & Ablation LaTeX Tables
+Command: /miniconda3/bin/python3 -u make_loss_comparison_table.py
+==============================================================================
+[SKIP] No loss comparison NPZ files found locally; preserving existing Loss_Comparison_Table.tex.
+
+==============================================================================
+[2026-10-21 01:44:09] STARTING: Generate Cold-Start Summary Tables & Plots
+Command: /miniconda3/bin/python3 -u summarize_cold_start_baselines.py
+==============================================================================
+[SKIP] No cold-start results found locally yet.
+
+==============================================================================
+[2026-10-21 01:44:11] STARTING: Package Results for Download (ArcMDTI_Server_Results.tar.gz)
+Command: /miniconda3/bin/python3 -u pack_results_for_download.py
+==============================================================================
+========================================================================
+Successfully packaged 9 result/figure/log files!
+Archive path : /data/ArcDTI/code_new/ArcMDTI_Server_Results.tar.gz
+Archive size : 3.61 MB (excluded heavy .pth checkpoints)
+========================================================================

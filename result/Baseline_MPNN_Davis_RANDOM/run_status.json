@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-27 20:59:07",
+  "stage": "Baseline_MPNN_Davis_RANDOM",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 25,
+  "total_epochs": 25,
+  "best_val_auc": 0.9166260495683947,
+  "best_epoch": -1
+}

@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-30 18:24:34",
+  "stage": "Baseline_MolTrans_ion_channel_COLD_TARGET",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 25,
+  "total_epochs": 25,
+  "best_val_auc": 0.6612963133707727,
+  "best_epoch": -1
+}

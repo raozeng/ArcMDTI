@@ -1,0 +1,12 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-31 04:51:56",
+  "stage": "Ablation_Enzyme_no_gate_Seed42",
+  "fold": 5,
+  "total_folds": 5,
+  "epoch": 100,
+  "total_epochs": 100,
+  "best_val_auc": 0.8399726213287906,
+  "best_epoch": -1
+}

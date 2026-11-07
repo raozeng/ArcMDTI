@@ -1,0 +1,7 @@
+{
+  "pipeline": "ArcMDTI_code_new",
+  "status": "completed",
+  "updated_at": "2026-10-31 03:22:46",
+  "dataset": "GPCRs",
+  "mode": "warm_start"
+}

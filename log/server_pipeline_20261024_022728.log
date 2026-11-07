@@ -1,0 +1,1264 @@
+
+==============================================================================
+[2026-10-24 02:27:28] STARTING: Dataset & Secondary Structure Verification / Auto-Download
+Command: /miniconda3/bin/python3 -u prepare_datasets.py
+==============================================================================
+========================================================================
+ArcMDTI Dataset Preparation Utility | Target: /data/ArcDTI/code_new/DataSets
+========================================================================
+[READY] DrugBank     | Pairs: 35022   | Unique Targets: 4254  | SS PKL: DrugBank_ss.pkl
+[READY] Davis        | Pairs: 25772   | Unique Targets: 379   | SS PKL: Davis_ss.pkl
+[READY] KIBA         | Pairs: 44028   | Unique Targets: 221   | SS PKL: KIBA_ss.pkl
+[READY] Enzyme       | Pairs: 5840    | Unique Targets: 660   | SS PKL: Enzyme_ss.pkl
+[READY] GPCRs        | Pairs: 6197    | Unique Targets: 296   | SS PKL: GPCRs_ss.pkl
+[READY] ion_channel  | Pairs: 2950    | Unique Targets: 204   | SS PKL: ion_channel_ss.pkl
+
+========================================================================
+All requested datasets and secondary-structure (.pkl) files are READY.
+========================================================================
+
+==============================================================================
+[2026-10-24 02:27:29] STARTING: 5-Fold Warm-Start CV (Davis)
+Command: /miniconda3/bin/python3 -u main.py --dataset Davis
+==============================================================================
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[ArcMDTI 5-Fold Warm-Start CV] Dataset: Davis | Folds: 5 | Device: cuda
+
+==================== Fold 1 / 5 (Davis) ====================
+[RESUME] Fold 1/5 already completed. Loading ./result/Davis_CV_Seed42/fold_1/ROC_PRC_data.npz...
+
+==================== Fold 2 / 5 (Davis) ====================
+[RESUME] Fold 2/5 already completed. Loading ./result/Davis_CV_Seed42/fold_2/ROC_PRC_data.npz...
+
+==================== Fold 3 / 5 (Davis) ====================
+[RESUME] Fold 3/5 already completed. Loading ./result/Davis_CV_Seed42/fold_3/ROC_PRC_data.npz...
+
+==================== Fold 4 / 5 (Davis) ====================
+[RESUME] Fold 4/5 already completed. Loading ./result/Davis_CV_Seed42/fold_4/ROC_PRC_data.npz...
+
+==================== Fold 5 / 5 (Davis) ====================
+[RESUME] Fold 5/5 already completed. Loading ./result/Davis_CV_Seed42/fold_5/ROC_PRC_data.npz...
+
+★★★★★★★★★★★★★★★★★★★★ SCI FINAL 5-FOLD REPORT (Davis) ★★★★★★★★★★★★★★★★★★★★
+AUC   : 0.9241 ± 0.0018
+AUPR  : 0.8493 ± 0.0035
+ACC   : 0.8677 ± 0.0020
+F1    : 0.7639 ± 0.0090
+MCC   : 0.6734 ± 0.0082
+Pre   : 0.7756 ± 0.0275
+Sn    : 0.7550 ± 0.0428
+Sp    : 0.9127 ± 0.0175
+Saved OOF predictions to: ./result/Davis_CV_Seed42/oof_predictions_Davis.csv
+
+Best Fold Identified: Fold 1. Extracting latent manifold & hyperspherical angles...
+
+Extracting Full-Space Features:   0%|                   | 0/202 [00:00<?, ?it/s]
+Extracting Full-Space Features:   0%|           | 1/202 [00:01<04:09,  1.24s/it]
+Extracting Full-Space Features:   1%|▏          | 3/202 [00:01<01:14,  2.68it/s]
+Extracting Full-Space Features:   2%|▎          | 5/202 [00:01<00:41,  4.70it/s]
+Extracting Full-Space Features:   3%|▍          | 7/202 [00:01<00:28,  6.76it/s]
+Extracting Full-Space Features:   4%|▍          | 9/202 [00:01<00:22,  8.67it/s]
+Extracting Full-Space Features:   5%|▌         | 11/202 [00:01<00:18, 10.48it/s]
+Extracting Full-Space Features:   6%|▋         | 13/202 [00:01<00:15, 12.01it/s]
+Extracting Full-Space Features:   7%|▋         | 15/202 [00:02<00:14, 13.20it/s]
+Extracting Full-Space Features:   8%|▊         | 17/202 [00:02<00:13, 14.15it/s]
+Extracting Full-Space Features:   9%|▉         | 19/202 [00:02<00:12, 15.01it/s]
+Extracting Full-Space Features:  10%|█         | 21/202 [00:02<00:11, 15.63it/s]
+Extracting Full-Space Features:  11%|█▏        | 23/202 [00:02<00:11, 16.19it/s]
+Extracting Full-Space Features:  12%|█▏        | 25/202 [00:02<00:10, 16.52it/s]
+Extracting Full-Space Features:  13%|█▎        | 27/202 [00:02<00:10, 16.89it/s]
+Extracting Full-Space Features:  14%|█▍        | 29/202 [00:02<00:10, 17.15it/s]
+Extracting Full-Space Features:  15%|█▌        | 31/202 [00:03<00:09, 17.25it/s]
+Extracting Full-Space Features:  16%|█▋        | 33/202 [00:03<00:09, 17.40it/s]
+Extracting Full-Space Features:  17%|█▋        | 35/202 [00:03<00:09, 17.41it/s]
+Extracting Full-Space Features:  18%|█▊        | 37/202 [00:03<00:09, 17.46it/s]
+Extracting Full-Space Features:  19%|█▉        | 39/202 [00:03<00:09, 17.51it/s]
+Extracting Full-Space Features:  20%|██        | 41/202 [00:03<00:09, 17.55it/s]
+Extracting Full-Space Features:  21%|██▏       | 43/202 [00:03<00:09, 17.59it/s]
+Extracting Full-Space Features:  22%|██▏       | 45/202 [00:03<00:08, 17.66it/s]
+Extracting Full-Space Features:  23%|██▎       | 47/202 [00:03<00:08, 17.58it/s]
+Extracting Full-Space Features:  24%|██▍       | 49/202 [00:04<00:08, 17.60it/s]
+Extracting Full-Space Features:  25%|██▌       | 51/202 [00:04<00:08, 17.63it/s]
+Extracting Full-Space Features:  26%|██▌       | 53/202 [00:04<00:08, 17.16it/s]
+Extracting Full-Space Features:  27%|██▋       | 55/202 [00:04<00:08, 16.80it/s]
+Extracting Full-Space Features:  28%|██▊       | 57/202 [00:04<00:08, 16.75it/s]
+Extracting Full-Space Features:  29%|██▉       | 59/202 [00:04<00:08, 16.75it/s]
+Extracting Full-Space Features:  30%|███       | 61/202 [00:04<00:08, 16.78it/s]
+Extracting Full-Space Features:  31%|███       | 63/202 [00:04<00:08, 16.57it/s]
+Extracting Full-Space Features:  32%|███▏      | 65/202 [00:05<00:08, 16.67it/s]
+Extracting Full-Space Features:  33%|███▎      | 67/202 [00:05<00:08, 16.68it/s]
+Extracting Full-Space Features:  34%|███▍      | 69/202 [00:05<00:07, 16.78it/s]
+Extracting Full-Space Features:  35%|███▌      | 71/202 [00:05<00:07, 16.92it/s]
+Extracting Full-Space Features:  36%|███▌      | 73/202 [00:05<00:07, 17.00it/s]
+Extracting Full-Space Features:  37%|███▋      | 75/202 [00:05<00:07, 17.14it/s]
+Extracting Full-Space Features:  38%|███▊      | 77/202 [00:05<00:07, 17.16it/s]
+Extracting Full-Space Features:  39%|███▉      | 79/202 [00:05<00:07, 17.24it/s]
+Extracting Full-Space Features:  40%|████      | 81/202 [00:05<00:07, 17.28it/s]
+Extracting Full-Space Features:  41%|████      | 83/202 [00:06<00:06, 17.29it/s]
+Extracting Full-Space Features:  42%|████▏     | 85/202 [00:06<00:06, 17.40it/s]
+Extracting Full-Space Features:  43%|████▎     | 87/202 [00:06<00:06, 17.26it/s]
+Extracting Full-Space Features:  44%|████▍     | 89/202 [00:06<00:06, 17.33it/s]
+Extracting Full-Space Features:  45%|████▌     | 91/202 [00:06<00:06, 17.26it/s]
+Extracting Full-Space Features:  46%|████▌     | 93/202 [00:06<00:06, 17.28it/s]
+Extracting Full-Space Features:  47%|████▋     | 95/202 [00:06<00:06, 17.32it/s]
+Extracting Full-Space Features:  48%|████▊     | 97/202 [00:06<00:06, 17.36it/s]
+Extracting Full-Space Features:  49%|████▉     | 99/202 [00:06<00:05, 17.34it/s]
+Extracting Full-Space Features:  50%|████▌    | 101/202 [00:07<00:05, 17.31it/s]
+Extracting Full-Space Features:  51%|████▌    | 103/202 [00:07<00:05, 17.39it/s]
+Extracting Full-Space Features:  52%|████▋    | 105/202 [00:07<00:05, 17.39it/s]
+Extracting Full-Space Features:  53%|████▊    | 107/202 [00:07<00:05, 17.50it/s]
+Extracting Full-Space Features:  54%|████▊    | 109/202 [00:07<00:05, 17.52it/s]
+Extracting Full-Space Features:  55%|████▉    | 111/202 [00:07<00:05, 17.54it/s]
+Extracting Full-Space Features:  56%|█████    | 113/202 [00:07<00:05, 17.55it/s]
+Extracting Full-Space Features:  57%|█████    | 115/202 [00:07<00:04, 17.42it/s]
+Extracting Full-Space Features:  58%|█████▏   | 117/202 [00:08<00:04, 17.40it/s]
+Extracting Full-Space Features:  59%|█████▎   | 119/202 [00:08<00:04, 17.48it/s]
+Extracting Full-Space Features:  60%|█████▍   | 121/202 [00:08<00:04, 17.37it/s]
+Extracting Full-Space Features:  61%|█████▍   | 123/202 [00:08<00:04, 17.38it/s]
+Extracting Full-Space Features:  62%|█████▌   | 125/202 [00:08<00:04, 17.51it/s]
+Extracting Full-Space Features:  63%|█████▋   | 127/202 [00:08<00:04, 17.48it/s]
+Extracting Full-Space Features:  64%|█████▋   | 129/202 [00:08<00:04, 17.55it/s]
+Extracting Full-Space Features:  65%|█████▊   | 131/202 [00:08<00:04, 17.65it/s]
+Extracting Full-Space Features:  66%|█████▉   | 133/202 [00:08<00:03, 17.56it/s]
+Extracting Full-Space Features:  67%|██████   | 135/202 [00:09<00:03, 17.55it/s]
+Extracting Full-Space Features:  68%|██████   | 137/202 [00:09<00:03, 17.72it/s]
+Extracting Full-Space Features:  69%|██████▏  | 139/202 [00:09<00:03, 17.67it/s]
+Extracting Full-Space Features:  70%|██████▎  | 141/202 [00:09<00:03, 17.68it/s]
+Extracting Full-Space Features:  71%|██████▎  | 143/202 [00:09<00:03, 17.79it/s]
+Extracting Full-Space Features:  72%|██████▍  | 145/202 [00:09<00:03, 17.60it/s]
+Extracting Full-Space Features:  73%|██████▌  | 147/202 [00:09<00:03, 17.67it/s]
+Extracting Full-Space Features:  74%|██████▋  | 149/202 [00:09<00:02, 17.73it/s]
+Extracting Full-Space Features:  75%|██████▋  | 151/202 [00:09<00:02, 17.63it/s]
+Extracting Full-Space Features:  76%|██████▊  | 153/202 [00:10<00:02, 17.55it/s]
+Extracting Full-Space Features:  77%|██████▉  | 155/202 [00:10<00:02, 17.56it/s]
+Extracting Full-Space Features:  78%|██████▉  | 157/202 [00:10<00:02, 17.56it/s]
+Extracting Full-Space Features:  79%|███████  | 159/202 [00:10<00:02, 17.62it/s]
+Extracting Full-Space Features:  80%|███████▏ | 161/202 [00:10<00:02, 17.69it/s]
+Extracting Full-Space Features:  81%|███████▎ | 163/202 [00:10<00:02, 17.72it/s]
+Extracting Full-Space Features:  82%|███████▎ | 165/202 [00:10<00:02, 17.76it/s]
+Extracting Full-Space Features:  83%|███████▍ | 167/202 [00:10<00:01, 17.62it/s]
+Extracting Full-Space Features:  84%|███████▌ | 169/202 [00:10<00:01, 17.28it/s]
+Extracting Full-Space Features:  85%|███████▌ | 171/202 [00:11<00:01, 16.70it/s]
+Extracting Full-Space Features:  86%|███████▋ | 173/202 [00:11<00:01, 16.76it/s]
+Extracting Full-Space Features:  87%|███████▊ | 175/202 [00:11<00:01, 16.80it/s]
+Extracting Full-Space Features:  88%|███████▉ | 177/202 [00:11<00:01, 17.11it/s]
+Extracting Full-Space Features:  89%|███████▉ | 179/202 [00:11<00:01, 17.08it/s]
+Extracting Full-Space Features:  90%|████████ | 181/202 [00:11<00:01, 17.11it/s]
+Extracting Full-Space Features:  91%|████████▏| 183/202 [00:11<00:01, 16.95it/s]
+Extracting Full-Space Features:  92%|████████▏| 185/202 [00:11<00:00, 17.02it/s]
+Extracting Full-Space Features:  93%|████████▎| 187/202 [00:12<00:00, 17.03it/s]
+Extracting Full-Space Features:  94%|████████▍| 189/202 [00:12<00:00, 17.08it/s]
+Extracting Full-Space Features:  95%|████████▌| 191/202 [00:12<00:00, 16.86it/s]
+Extracting Full-Space Features:  96%|████████▌| 193/202 [00:12<00:00, 16.84it/s]
+Extracting Full-Space Features:  97%|████████▋| 195/202 [00:12<00:00, 16.77it/s]
+Extracting Full-Space Features:  98%|████████▊| 197/202 [00:12<00:00, 16.76it/s]
+Extracting Full-Space Features:  99%|████████▊| 199/202 [00:12<00:00, 16.86it/s]
+Extracting Full-Space Features: 100%|████████▉| 201/202 [00:12<00:00, 16.98it/s]
+Extracting Full-Space Features: 100%|█████████| 202/202 [00:12<00:00, 15.67it/s]
+
+[Feature Quality] Davis: Center Dist=45.5314, Within Var=3.4865, Ratio=24.3848
+--------------------------------------------------
+[Manifold Analysis] Dataset: Davis | Total samples: 25772, Dim: 256
+   Positives: 7320, Negatives: 18452
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.33s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:28:05] STARTING: OOF Prediction Verification (Davis)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset Davis
+==============================================================================
+[SKIP] OOF predictions already exist for Enzyme: result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+[SKIP] OOF predictions already exist for GPCRs: result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+[SKIP] OOF predictions already exist for ion_channel: result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+[SKIP] OOF predictions already exist for Davis: result/Davis_CV_Seed42/oof_predictions_Davis.csv
+[SKIP] OOF predictions already exist for KIBA: result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+==============================================================================
+[2026-10-24 02:28:09] STARTING: Latent Manifold & Angular Distribution Extraction (Davis)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset Davis
+==============================================================================
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+--------------------------------------------------
+[Manifold Analysis] Dataset: Davis | Total samples: 5000, Dim: 256
+   Positives: 1147, Negatives: 3853
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.13s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:28:19] STARTING: 5-Fold Warm-Start CV (KIBA)
+Command: /miniconda3/bin/python3 -u main.py --dataset KIBA
+==============================================================================
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[ArcMDTI 5-Fold Warm-Start CV] Dataset: KIBA | Folds: 5 | Device: cuda
+
+==================== Fold 1 / 5 (KIBA) ====================
+[RESUME] Fold 1/5 already completed. Loading ./result/KIBA_CV_Seed42/fold_1/ROC_PRC_data.npz...
+
+==================== Fold 2 / 5 (KIBA) ====================
+[RESUME] Fold 2/5 already completed. Loading ./result/KIBA_CV_Seed42/fold_2/ROC_PRC_data.npz...
+
+==================== Fold 3 / 5 (KIBA) ====================
+[RESUME] Fold 3/5 already completed. Loading ./result/KIBA_CV_Seed42/fold_3/ROC_PRC_data.npz...
+
+==================== Fold 4 / 5 (KIBA) ====================
+[RESUME] Fold 4/5 already completed. Loading ./result/KIBA_CV_Seed42/fold_4/ROC_PRC_data.npz...
+
+==================== Fold 5 / 5 (KIBA) ====================
+[RESUME] Fold 5/5 already completed. Loading ./result/KIBA_CV_Seed42/fold_5/ROC_PRC_data.npz...
+
+★★★★★★★★★★★★★★★★★★★★ SCI FINAL 5-FOLD REPORT (KIBA) ★★★★★★★★★★★★★★★★★★★★
+AUC   : 0.9371 ± 0.0030
+AUPR  : 0.8205 ± 0.0076
+ACC   : 0.9024 ± 0.0034
+F1    : 0.7323 ± 0.0131
+MCC   : 0.6745 ± 0.0129
+Pre   : 0.7649 ± 0.0305
+Sn    : 0.7048 ± 0.0410
+Sp    : 0.9486 ± 0.0116
+Saved OOF predictions to: ./result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+Best Fold Identified: Fold 1. Extracting latent manifold & hyperspherical angles...
+
+Extracting Full-Space Features:   0%|                   | 0/344 [00:00<?, ?it/s]
+Extracting Full-Space Features:   0%|           | 1/344 [00:00<03:20,  1.71it/s]
+Extracting Full-Space Features:   1%|           | 3/344 [00:00<01:07,  5.03it/s]
+Extracting Full-Space Features:   1%|▏          | 5/344 [00:00<00:42,  8.00it/s]
+Extracting Full-Space Features:   2%|▏          | 7/344 [00:00<00:32, 10.52it/s]
+Extracting Full-Space Features:   3%|▎          | 9/344 [00:01<00:26, 12.44it/s]
+Extracting Full-Space Features:   3%|▎         | 11/344 [00:01<00:24, 13.68it/s]
+Extracting Full-Space Features:   4%|▍         | 13/344 [00:01<00:22, 14.86it/s]
+Extracting Full-Space Features:   4%|▍         | 15/344 [00:01<00:20, 15.76it/s]
+Extracting Full-Space Features:   5%|▍         | 17/344 [00:01<00:20, 16.34it/s]
+Extracting Full-Space Features:   6%|▌         | 19/344 [00:01<00:19, 16.70it/s]
+Extracting Full-Space Features:   6%|▌         | 21/344 [00:01<00:18, 17.04it/s]
+Extracting Full-Space Features:   7%|▋         | 23/344 [00:01<00:18, 17.40it/s]
+Extracting Full-Space Features:   7%|▋         | 25/344 [00:01<00:18, 17.69it/s]
+Extracting Full-Space Features:   8%|▊         | 27/344 [00:02<00:17, 17.98it/s]
+Extracting Full-Space Features:   8%|▊         | 29/344 [00:02<00:17, 18.08it/s]
+Extracting Full-Space Features:   9%|▉         | 31/344 [00:02<00:17, 17.89it/s]
+Extracting Full-Space Features:  10%|▉         | 33/344 [00:02<00:17, 17.96it/s]
+Extracting Full-Space Features:  10%|█         | 35/344 [00:02<00:17, 17.90it/s]
+Extracting Full-Space Features:  11%|█         | 37/344 [00:02<00:17, 17.94it/s]
+Extracting Full-Space Features:  11%|█▏        | 39/344 [00:02<00:17, 17.88it/s]
+Extracting Full-Space Features:  12%|█▏        | 41/344 [00:02<00:16, 17.85it/s]
+Extracting Full-Space Features:  12%|█▎        | 43/344 [00:02<00:16, 17.86it/s]
+Extracting Full-Space Features:  13%|█▎        | 45/344 [00:03<00:16, 17.82it/s]
+Extracting Full-Space Features:  14%|█▎        | 47/344 [00:03<00:16, 17.89it/s]
+Extracting Full-Space Features:  14%|█▍        | 49/344 [00:03<00:16, 17.72it/s]
+Extracting Full-Space Features:  15%|█▍        | 51/344 [00:03<00:16, 17.71it/s]
+Extracting Full-Space Features:  15%|█▌        | 53/344 [00:03<00:16, 17.80it/s]
+Extracting Full-Space Features:  16%|█▌        | 55/344 [00:03<00:16, 17.88it/s]
+Extracting Full-Space Features:  17%|█▋        | 57/344 [00:03<00:16, 17.92it/s]
+Extracting Full-Space Features:  17%|█▋        | 59/344 [00:03<00:15, 17.87it/s]
+Extracting Full-Space Features:  18%|█▊        | 61/344 [00:03<00:15, 17.78it/s]
+Extracting Full-Space Features:  18%|█▊        | 63/344 [00:04<00:15, 17.68it/s]
+Extracting Full-Space Features:  19%|█▉        | 65/344 [00:04<00:16, 17.32it/s]
+Extracting Full-Space Features:  19%|█▉        | 67/344 [00:04<00:15, 17.31it/s]
+Extracting Full-Space Features:  20%|██        | 69/344 [00:04<00:15, 17.40it/s]
+Extracting Full-Space Features:  21%|██        | 71/344 [00:04<00:15, 17.35it/s]
+Extracting Full-Space Features:  21%|██        | 73/344 [00:04<00:15, 17.47it/s]
+Extracting Full-Space Features:  22%|██▏       | 75/344 [00:04<00:15, 17.49it/s]
+Extracting Full-Space Features:  22%|██▏       | 77/344 [00:04<00:15, 17.40it/s]
+Extracting Full-Space Features:  23%|██▎       | 79/344 [00:04<00:15, 17.52it/s]
+Extracting Full-Space Features:  24%|██▎       | 81/344 [00:05<00:15, 17.46it/s]
+Extracting Full-Space Features:  24%|██▍       | 83/344 [00:05<00:15, 17.39it/s]
+Extracting Full-Space Features:  25%|██▍       | 85/344 [00:05<00:14, 17.49it/s]
+Extracting Full-Space Features:  25%|██▌       | 87/344 [00:05<00:14, 17.64it/s]
+Extracting Full-Space Features:  26%|██▌       | 89/344 [00:05<00:14, 17.68it/s]
+Extracting Full-Space Features:  26%|██▋       | 91/344 [00:05<00:14, 17.76it/s]
+Extracting Full-Space Features:  27%|██▋       | 93/344 [00:05<00:14, 17.82it/s]
+Extracting Full-Space Features:  28%|██▊       | 95/344 [00:05<00:14, 17.78it/s]
+Extracting Full-Space Features:  28%|██▊       | 97/344 [00:06<00:13, 17.82it/s]
+Extracting Full-Space Features:  29%|██▉       | 99/344 [00:06<00:13, 17.80it/s]
+Extracting Full-Space Features:  29%|██▋      | 101/344 [00:06<00:13, 17.69it/s]
+Extracting Full-Space Features:  30%|██▋      | 103/344 [00:06<00:13, 17.64it/s]
+Extracting Full-Space Features:  31%|██▋      | 105/344 [00:06<00:13, 17.51it/s]
+Extracting Full-Space Features:  31%|██▊      | 107/344 [00:06<00:13, 17.42it/s]
+Extracting Full-Space Features:  32%|██▊      | 109/344 [00:06<00:13, 17.53it/s]
+Extracting Full-Space Features:  32%|██▉      | 111/344 [00:06<00:13, 17.73it/s]
+Extracting Full-Space Features:  33%|██▉      | 113/344 [00:06<00:12, 17.82it/s]
+Extracting Full-Space Features:  33%|███      | 115/344 [00:07<00:12, 17.88it/s]
+Extracting Full-Space Features:  34%|███      | 117/344 [00:07<00:12, 17.52it/s]
+Extracting Full-Space Features:  35%|███      | 119/344 [00:07<00:12, 17.52it/s]
+Extracting Full-Space Features:  35%|███▏     | 121/344 [00:07<00:12, 17.26it/s]
+Extracting Full-Space Features:  36%|███▏     | 123/344 [00:07<00:13, 16.98it/s]
+Extracting Full-Space Features:  36%|███▎     | 125/344 [00:07<00:13, 16.84it/s]
+Extracting Full-Space Features:  37%|███▎     | 127/344 [00:07<00:13, 16.46it/s]
+Extracting Full-Space Features:  38%|███▍     | 129/344 [00:07<00:13, 16.42it/s]
+Extracting Full-Space Features:  38%|███▍     | 131/344 [00:07<00:12, 16.45it/s]
+Extracting Full-Space Features:  39%|███▍     | 133/344 [00:08<00:12, 16.58it/s]
+Extracting Full-Space Features:  39%|███▌     | 135/344 [00:08<00:12, 16.72it/s]
+Extracting Full-Space Features:  40%|███▌     | 137/344 [00:08<00:12, 16.84it/s]
+Extracting Full-Space Features:  40%|███▋     | 139/344 [00:08<00:12, 16.92it/s]
+Extracting Full-Space Features:  41%|███▋     | 141/344 [00:08<00:11, 17.06it/s]
+Extracting Full-Space Features:  42%|███▋     | 143/344 [00:08<00:11, 17.22it/s]
+Extracting Full-Space Features:  42%|███▊     | 145/344 [00:08<00:11, 17.38it/s]
+Extracting Full-Space Features:  43%|███▊     | 147/344 [00:08<00:11, 17.45it/s]
+Extracting Full-Space Features:  43%|███▉     | 149/344 [00:09<00:11, 17.55it/s]
+Extracting Full-Space Features:  44%|███▉     | 151/344 [00:09<00:10, 17.59it/s]
+Extracting Full-Space Features:  44%|████     | 153/344 [00:09<00:11, 17.35it/s]
+Extracting Full-Space Features:  45%|████     | 155/344 [00:09<00:10, 17.40it/s]
+Extracting Full-Space Features:  46%|████     | 157/344 [00:09<00:10, 17.52it/s]
+Extracting Full-Space Features:  46%|████▏    | 159/344 [00:09<00:10, 17.53it/s]
+Extracting Full-Space Features:  47%|████▏    | 161/344 [00:09<00:10, 17.61it/s]
+Extracting Full-Space Features:  47%|████▎    | 163/344 [00:09<00:10, 17.55it/s]
+Extracting Full-Space Features:  48%|████▎    | 165/344 [00:09<00:10, 17.55it/s]
+Extracting Full-Space Features:  49%|████▎    | 167/344 [00:10<00:10, 17.57it/s]
+Extracting Full-Space Features:  49%|████▍    | 169/344 [00:10<00:10, 17.26it/s]
+Extracting Full-Space Features:  50%|████▍    | 171/344 [00:10<00:09, 17.34it/s]
+Extracting Full-Space Features:  50%|████▌    | 173/344 [00:10<00:09, 17.38it/s]
+Extracting Full-Space Features:  51%|████▌    | 175/344 [00:10<00:09, 17.33it/s]
+Extracting Full-Space Features:  51%|████▋    | 177/344 [00:10<00:09, 17.06it/s]
+Extracting Full-Space Features:  52%|████▋    | 179/344 [00:10<00:09, 17.06it/s]
+Extracting Full-Space Features:  53%|████▋    | 181/344 [00:10<00:09, 17.08it/s]
+Extracting Full-Space Features:  53%|████▊    | 183/344 [00:10<00:09, 17.22it/s]
+Extracting Full-Space Features:  54%|████▊    | 185/344 [00:11<00:09, 17.32it/s]
+Extracting Full-Space Features:  54%|████▉    | 187/344 [00:11<00:09, 17.28it/s]
+Extracting Full-Space Features:  55%|████▉    | 189/344 [00:11<00:08, 17.25it/s]
+Extracting Full-Space Features:  56%|████▉    | 191/344 [00:11<00:08, 17.32it/s]
+Extracting Full-Space Features:  56%|█████    | 193/344 [00:11<00:08, 17.29it/s]
+Extracting Full-Space Features:  57%|█████    | 195/344 [00:11<00:08, 17.43it/s]
+Extracting Full-Space Features:  57%|█████▏   | 197/344 [00:11<00:08, 17.55it/s]
+Extracting Full-Space Features:  58%|█████▏   | 199/344 [00:11<00:08, 17.56it/s]
+Extracting Full-Space Features:  58%|█████▎   | 201/344 [00:12<00:08, 17.57it/s]
+Extracting Full-Space Features:  59%|█████▎   | 203/344 [00:12<00:08, 17.55it/s]
+Extracting Full-Space Features:  60%|█████▎   | 205/344 [00:12<00:07, 17.45it/s]
+Extracting Full-Space Features:  60%|█████▍   | 207/344 [00:12<00:07, 17.48it/s]
+Extracting Full-Space Features:  61%|█████▍   | 209/344 [00:12<00:07, 17.51it/s]
+Extracting Full-Space Features:  61%|█████▌   | 211/344 [00:12<00:07, 17.50it/s]
+Extracting Full-Space Features:  62%|█████▌   | 213/344 [00:12<00:07, 17.56it/s]
+Extracting Full-Space Features:  62%|█████▋   | 215/344 [00:12<00:07, 17.55it/s]
+Extracting Full-Space Features:  63%|█████▋   | 217/344 [00:12<00:07, 17.53it/s]
+Extracting Full-Space Features:  64%|█████▋   | 219/344 [00:13<00:07, 17.58it/s]
+Extracting Full-Space Features:  64%|█████▊   | 221/344 [00:13<00:07, 17.50it/s]
+Extracting Full-Space Features:  65%|█████▊   | 223/344 [00:13<00:06, 17.42it/s]
+Extracting Full-Space Features:  65%|█████▉   | 225/344 [00:13<00:06, 17.38it/s]
+Extracting Full-Space Features:  66%|█████▉   | 227/344 [00:13<00:06, 17.44it/s]
+Extracting Full-Space Features:  67%|█████▉   | 229/344 [00:13<00:06, 17.51it/s]
+Extracting Full-Space Features:  67%|██████   | 231/344 [00:13<00:06, 17.60it/s]
+Extracting Full-Space Features:  68%|██████   | 233/344 [00:13<00:06, 17.43it/s]
+Extracting Full-Space Features:  68%|██████▏  | 235/344 [00:13<00:06, 17.46it/s]
+Extracting Full-Space Features:  69%|██████▏  | 237/344 [00:14<00:06, 17.45it/s]
+Extracting Full-Space Features:  69%|██████▎  | 239/344 [00:14<00:06, 17.46it/s]
+Extracting Full-Space Features:  70%|██████▎  | 241/344 [00:14<00:05, 17.39it/s]
+Extracting Full-Space Features:  71%|██████▎  | 243/344 [00:14<00:05, 17.41it/s]
+Extracting Full-Space Features:  71%|██████▍  | 245/344 [00:14<00:05, 17.45it/s]
+Extracting Full-Space Features:  72%|██████▍  | 247/344 [00:14<00:05, 17.44it/s]
+Extracting Full-Space Features:  72%|██████▌  | 249/344 [00:14<00:05, 17.51it/s]
+Extracting Full-Space Features:  73%|██████▌  | 251/344 [00:14<00:05, 17.50it/s]
+Extracting Full-Space Features:  74%|██████▌  | 253/344 [00:14<00:05, 17.48it/s]
+Extracting Full-Space Features:  74%|██████▋  | 255/344 [00:15<00:05, 17.61it/s]
+Extracting Full-Space Features:  75%|██████▋  | 257/344 [00:15<00:04, 17.57it/s]
+Extracting Full-Space Features:  75%|██████▊  | 259/344 [00:15<00:04, 17.51it/s]
+Extracting Full-Space Features:  76%|██████▊  | 261/344 [00:15<00:04, 17.52it/s]
+Extracting Full-Space Features:  76%|██████▉  | 263/344 [00:15<00:04, 17.49it/s]
+Extracting Full-Space Features:  77%|██████▉  | 265/344 [00:15<00:04, 17.52it/s]
+Extracting Full-Space Features:  78%|██████▉  | 267/344 [00:15<00:04, 17.54it/s]
+Extracting Full-Space Features:  78%|███████  | 269/344 [00:15<00:04, 17.58it/s]
+Extracting Full-Space Features:  79%|███████  | 271/344 [00:16<00:04, 17.57it/s]
+Extracting Full-Space Features:  79%|███████▏ | 273/344 [00:16<00:04, 17.54it/s]
+Extracting Full-Space Features:  80%|███████▏ | 275/344 [00:16<00:03, 17.41it/s]
+Extracting Full-Space Features:  81%|███████▏ | 277/344 [00:16<00:03, 17.28it/s]
+Extracting Full-Space Features:  81%|███████▎ | 279/344 [00:16<00:03, 17.37it/s]
+Extracting Full-Space Features:  82%|███████▎ | 281/344 [00:16<00:03, 17.41it/s]
+Extracting Full-Space Features:  82%|███████▍ | 283/344 [00:16<00:03, 17.48it/s]
+Extracting Full-Space Features:  83%|███████▍ | 285/344 [00:16<00:03, 17.52it/s]
+Extracting Full-Space Features:  83%|███████▌ | 287/344 [00:16<00:03, 17.52it/s]
+Extracting Full-Space Features:  84%|███████▌ | 289/344 [00:17<00:03, 17.54it/s]
+Extracting Full-Space Features:  85%|███████▌ | 291/344 [00:17<00:03, 17.60it/s]
+Extracting Full-Space Features:  85%|███████▋ | 293/344 [00:17<00:02, 17.48it/s]
+Extracting Full-Space Features:  86%|███████▋ | 295/344 [00:17<00:02, 17.51it/s]
+Extracting Full-Space Features:  86%|███████▊ | 297/344 [00:17<00:02, 17.50it/s]
+Extracting Full-Space Features:  87%|███████▊ | 299/344 [00:17<00:02, 17.45it/s]
+Extracting Full-Space Features:  88%|███████▉ | 301/344 [00:17<00:02, 17.43it/s]
+Extracting Full-Space Features:  88%|███████▉ | 303/344 [00:17<00:02, 17.36it/s]
+Extracting Full-Space Features:  89%|███████▉ | 305/344 [00:17<00:02, 17.43it/s]
+Extracting Full-Space Features:  89%|████████ | 307/344 [00:18<00:02, 17.44it/s]
+Extracting Full-Space Features:  90%|████████ | 309/344 [00:18<00:01, 17.50it/s]
+Extracting Full-Space Features:  90%|████████▏| 311/344 [00:18<00:01, 17.38it/s]
+Extracting Full-Space Features:  91%|████████▏| 313/344 [00:18<00:01, 17.37it/s]
+Extracting Full-Space Features:  92%|████████▏| 315/344 [00:18<00:01, 17.42it/s]
+Extracting Full-Space Features:  92%|████████▎| 317/344 [00:18<00:01, 17.47it/s]
+Extracting Full-Space Features:  93%|████████▎| 319/344 [00:18<00:01, 17.55it/s]
+Extracting Full-Space Features:  93%|████████▍| 321/344 [00:18<00:01, 17.51it/s]
+Extracting Full-Space Features:  94%|████████▍| 323/344 [00:19<00:01, 17.50it/s]
+Extracting Full-Space Features:  94%|████████▌| 325/344 [00:19<00:01, 17.52it/s]
+Extracting Full-Space Features:  95%|████████▌| 327/344 [00:19<00:00, 17.50it/s]
+Extracting Full-Space Features:  96%|████████▌| 329/344 [00:19<00:00, 17.39it/s]
+Extracting Full-Space Features:  96%|████████▋| 331/344 [00:19<00:00, 17.38it/s]
+Extracting Full-Space Features:  97%|████████▋| 333/344 [00:19<00:00, 17.44it/s]
+Extracting Full-Space Features:  97%|████████▊| 335/344 [00:19<00:00, 17.48it/s]
+Extracting Full-Space Features:  98%|████████▊| 337/344 [00:19<00:00, 17.51it/s]
+Extracting Full-Space Features:  99%|████████▊| 339/344 [00:19<00:00, 17.41it/s]
+Extracting Full-Space Features:  99%|████████▉| 341/344 [00:20<00:00, 17.35it/s]
+Extracting Full-Space Features: 100%|████████▉| 343/344 [00:20<00:00, 17.46it/s]
+Extracting Full-Space Features: 100%|█████████| 344/344 [00:20<00:00, 17.02it/s]
+
+[Feature Quality] KIBA: Center Dist=57.7092, Within Var=3.6337, Ratio=30.2741
+--------------------------------------------------
+[Manifold Analysis] Dataset: KIBA | Total samples: 44029, Dim: 256
+   Positives: 8359, Negatives: 35670
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.52s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:28:57] STARTING: OOF Prediction Verification (KIBA)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset KIBA
+==============================================================================
+[SKIP] OOF predictions already exist for Enzyme: result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+[SKIP] OOF predictions already exist for GPCRs: result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+[SKIP] OOF predictions already exist for ion_channel: result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+[SKIP] OOF predictions already exist for Davis: result/Davis_CV_Seed42/oof_predictions_Davis.csv
+[SKIP] OOF predictions already exist for KIBA: result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+==============================================================================
+[2026-10-24 02:29:02] STARTING: Latent Manifold & Angular Distribution Extraction (KIBA)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset KIBA
+==============================================================================
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+--------------------------------------------------
+[Manifold Analysis] Dataset: KIBA | Total samples: 5000, Dim: 256
+   Positives: 570, Negatives: 4430
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.23s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:29:13] STARTING: 5-Fold Warm-Start CV (DrugBank)
+Command: /miniconda3/bin/python3 -u main.py --dataset DrugBank
+==============================================================================
+[ArcMDTI Config] Dataset: DrugBank | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[ArcMDTI 5-Fold Warm-Start CV] Dataset: DrugBank | Folds: 5 | Device: cuda
+
+==================== Fold 1 / 5 (DrugBank) ====================
+[RESUME] Fold 1/5 already completed. Loading ./result/DrugBank_CV_Seed42/fold_1/ROC_PRC_data.npz...
+
+==================== Fold 2 / 5 (DrugBank) ====================
+[RESUME] Fold 2/5 already completed. Loading ./result/DrugBank_CV_Seed42/fold_2/ROC_PRC_data.npz...
+
+==================== Fold 3 / 5 (DrugBank) ====================
+[RESUME] Fold 3/5 already completed. Loading ./result/DrugBank_CV_Seed42/fold_3/ROC_PRC_data.npz...
+
+==================== Fold 4 / 5 (DrugBank) ====================
+[RESUME] Fold 4/5 already completed. Loading ./result/DrugBank_CV_Seed42/fold_4/ROC_PRC_data.npz...
+
+==================== Fold 5 / 5 (DrugBank) ====================
+[RESUME] Fold 5/5 already completed. Loading ./result/DrugBank_CV_Seed42/fold_5/ROC_PRC_data.npz...
+
+★★★★★★★★★★★★★★★★★★★★ SCI FINAL 5-FOLD REPORT (DrugBank) ★★★★★★★★★★★★★★★★★★★★
+AUC   : 0.8918 ± 0.0024
+AUPR  : 0.8929 ± 0.0065
+ACC   : 0.8141 ± 0.0078
+F1    : 0.8143 ± 0.0064
+MCC   : 0.6296 ± 0.0150
+Pre   : 0.8148 ± 0.0296
+Sn    : 0.8156 ± 0.0293
+Sp    : 0.8129 ± 0.0405
+Saved OOF predictions to: ./result/DrugBank_CV_Seed42/oof_predictions_DrugBank.csv
+
+Best Fold Identified: Fold 2. Extracting latent manifold & hyperspherical angles...
+
+Extracting Full-Space Features:   0%|                   | 0/274 [00:00<?, ?it/s]
+Extracting Full-Space Features:   0%|           | 1/274 [00:00<02:49,  1.61it/s]
+Extracting Full-Space Features:   1%|           | 3/274 [00:00<00:57,  4.75it/s]
+Extracting Full-Space Features:   2%|▏          | 5/274 [00:00<00:35,  7.54it/s]
+Extracting Full-Space Features:   3%|▎          | 7/274 [00:00<00:26,  9.98it/s]
+Extracting Full-Space Features:   3%|▎          | 9/274 [00:01<00:22, 11.89it/s]
+Extracting Full-Space Features:   4%|▍         | 11/274 [00:01<00:19, 13.45it/s]
+Extracting Full-Space Features:   5%|▍         | 13/274 [00:01<00:17, 14.59it/s]
+Extracting Full-Space Features:   5%|▌         | 15/274 [00:01<00:16, 15.38it/s]
+Extracting Full-Space Features:   6%|▌         | 17/274 [00:01<00:16, 15.97it/s]
+Extracting Full-Space Features:   7%|▋         | 19/274 [00:01<00:15, 16.89it/s]
+Extracting Full-Space Features:   8%|▊         | 21/274 [00:01<00:14, 17.56it/s]
+Extracting Full-Space Features:   8%|▊         | 23/274 [00:01<00:14, 17.65it/s]
+Extracting Full-Space Features:   9%|▉         | 25/274 [00:01<00:13, 18.02it/s]
+Extracting Full-Space Features:  10%|▉         | 27/274 [00:02<00:13, 18.11it/s]
+Extracting Full-Space Features:  11%|█         | 29/274 [00:02<00:13, 18.01it/s]
+Extracting Full-Space Features:  11%|█▏        | 31/274 [00:02<00:13, 17.55it/s]
+Extracting Full-Space Features:  12%|█▏        | 33/274 [00:02<00:13, 17.76it/s]
+Extracting Full-Space Features:  13%|█▎        | 35/274 [00:02<00:13, 17.74it/s]
+Extracting Full-Space Features:  14%|█▎        | 37/274 [00:02<00:13, 18.03it/s]
+Extracting Full-Space Features:  14%|█▍        | 39/274 [00:02<00:13, 18.05it/s]
+Extracting Full-Space Features:  15%|█▍        | 41/274 [00:02<00:12, 18.35it/s]
+Extracting Full-Space Features:  16%|█▌        | 43/274 [00:02<00:12, 18.09it/s]
+Extracting Full-Space Features:  16%|█▋        | 45/274 [00:03<00:12, 18.21it/s]
+Extracting Full-Space Features:  17%|█▋        | 47/274 [00:03<00:12, 17.67it/s]
+Extracting Full-Space Features:  18%|█▊        | 49/274 [00:03<00:12, 17.59it/s]
+Extracting Full-Space Features:  19%|█▊        | 51/274 [00:03<00:12, 17.53it/s]
+Extracting Full-Space Features:  19%|█▉        | 53/274 [00:03<00:12, 17.72it/s]
+Extracting Full-Space Features:  20%|██        | 55/274 [00:03<00:12, 17.92it/s]
+Extracting Full-Space Features:  21%|██        | 57/274 [00:03<00:12, 17.84it/s]
+Extracting Full-Space Features:  22%|██▏       | 59/274 [00:03<00:11, 18.10it/s]
+Extracting Full-Space Features:  22%|██▏       | 61/274 [00:03<00:11, 17.97it/s]
+Extracting Full-Space Features:  23%|██▎       | 63/274 [00:04<00:11, 18.17it/s]
+Extracting Full-Space Features:  24%|██▎       | 65/274 [00:04<00:11, 18.44it/s]
+Extracting Full-Space Features:  24%|██▍       | 67/274 [00:04<00:11, 18.57it/s]
+Extracting Full-Space Features:  25%|██▌       | 69/274 [00:04<00:11, 18.62it/s]
+Extracting Full-Space Features:  26%|██▋       | 72/274 [00:04<00:10, 19.06it/s]
+Extracting Full-Space Features:  27%|██▋       | 74/274 [00:04<00:10, 18.91it/s]
+Extracting Full-Space Features:  28%|██▊       | 76/274 [00:04<00:10, 19.10it/s]
+Extracting Full-Space Features:  28%|██▊       | 78/274 [00:04<00:10, 19.25it/s]
+Extracting Full-Space Features:  29%|██▉       | 80/274 [00:04<00:10, 19.24it/s]
+Extracting Full-Space Features:  30%|███       | 83/274 [00:05<00:09, 19.14it/s]
+Extracting Full-Space Features:  31%|███       | 85/274 [00:05<00:10, 18.76it/s]
+Extracting Full-Space Features:  32%|███▏      | 87/274 [00:05<00:09, 18.78it/s]
+Extracting Full-Space Features:  32%|███▏      | 89/274 [00:05<00:10, 18.31it/s]
+Extracting Full-Space Features:  33%|███▎      | 91/274 [00:05<00:09, 18.67it/s]
+Extracting Full-Space Features:  34%|███▍      | 93/274 [00:05<00:09, 18.92it/s]
+Extracting Full-Space Features:  35%|███▍      | 95/274 [00:05<00:09, 19.21it/s]
+Extracting Full-Space Features:  35%|███▌      | 97/274 [00:05<00:09, 19.34it/s]
+Extracting Full-Space Features:  36%|███▌      | 99/274 [00:05<00:09, 19.03it/s]
+Extracting Full-Space Features:  37%|███▎     | 101/274 [00:06<00:09, 18.90it/s]
+Extracting Full-Space Features:  38%|███▍     | 103/274 [00:06<00:09, 18.40it/s]
+Extracting Full-Space Features:  38%|███▍     | 105/274 [00:06<00:08, 18.79it/s]
+Extracting Full-Space Features:  39%|███▌     | 107/274 [00:06<00:08, 18.99it/s]
+Extracting Full-Space Features:  40%|███▌     | 110/274 [00:06<00:08, 19.49it/s]
+Extracting Full-Space Features:  41%|███▋     | 112/274 [00:06<00:08, 19.26it/s]
+Extracting Full-Space Features:  42%|███▋     | 114/274 [00:06<00:08, 19.13it/s]
+Extracting Full-Space Features:  42%|███▊     | 116/274 [00:06<00:08, 19.26it/s]
+Extracting Full-Space Features:  43%|███▉     | 118/274 [00:06<00:08, 18.88it/s]
+Extracting Full-Space Features:  44%|███▉     | 120/274 [00:07<00:08, 18.86it/s]
+Extracting Full-Space Features:  45%|████     | 122/274 [00:07<00:08, 18.74it/s]
+Extracting Full-Space Features:  45%|████     | 124/274 [00:07<00:08, 18.68it/s]
+Extracting Full-Space Features:  46%|████▏    | 126/274 [00:07<00:07, 18.54it/s]
+Extracting Full-Space Features:  47%|████▏    | 128/274 [00:07<00:07, 18.58it/s]
+Extracting Full-Space Features:  47%|████▎    | 130/274 [00:07<00:07, 18.07it/s]
+Extracting Full-Space Features:  48%|████▎    | 132/274 [00:07<00:08, 17.65it/s]
+Extracting Full-Space Features:  49%|████▍    | 134/274 [00:07<00:07, 17.83it/s]
+Extracting Full-Space Features:  50%|████▍    | 136/274 [00:08<00:07, 17.31it/s]
+Extracting Full-Space Features:  50%|████▌    | 138/274 [00:08<00:07, 17.33it/s]
+Extracting Full-Space Features:  51%|████▌    | 140/274 [00:08<00:07, 17.57it/s]
+Extracting Full-Space Features:  52%|████▋    | 142/274 [00:08<00:07, 17.49it/s]
+Extracting Full-Space Features:  53%|████▋    | 144/274 [00:08<00:07, 17.61it/s]
+Extracting Full-Space Features:  53%|████▊    | 146/274 [00:08<00:07, 17.86it/s]
+Extracting Full-Space Features:  54%|████▊    | 148/274 [00:08<00:07, 17.75it/s]
+Extracting Full-Space Features:  55%|████▉    | 150/274 [00:08<00:06, 17.77it/s]
+Extracting Full-Space Features:  55%|████▉    | 152/274 [00:08<00:06, 18.00it/s]
+Extracting Full-Space Features:  56%|█████    | 154/274 [00:09<00:06, 18.23it/s]
+Extracting Full-Space Features:  57%|█████    | 156/274 [00:09<00:06, 18.51it/s]
+Extracting Full-Space Features:  58%|█████▏   | 158/274 [00:09<00:06, 18.65it/s]
+Extracting Full-Space Features:  58%|█████▎   | 160/274 [00:09<00:06, 18.69it/s]
+Extracting Full-Space Features:  59%|█████▎   | 162/274 [00:09<00:06, 18.63it/s]
+Extracting Full-Space Features:  60%|█████▍   | 164/274 [00:09<00:05, 18.76it/s]
+Extracting Full-Space Features:  61%|█████▍   | 166/274 [00:09<00:05, 18.92it/s]
+Extracting Full-Space Features:  61%|█████▌   | 168/274 [00:09<00:05, 18.74it/s]
+Extracting Full-Space Features:  62%|█████▌   | 170/274 [00:09<00:05, 18.69it/s]
+Extracting Full-Space Features:  63%|█████▋   | 172/274 [00:09<00:05, 18.72it/s]
+Extracting Full-Space Features:  64%|█████▋   | 174/274 [00:10<00:05, 18.68it/s]
+Extracting Full-Space Features:  64%|█████▊   | 176/274 [00:10<00:05, 18.61it/s]
+Extracting Full-Space Features:  65%|█████▊   | 178/274 [00:10<00:05, 18.56it/s]
+Extracting Full-Space Features:  66%|█████▉   | 180/274 [00:10<00:05, 18.53it/s]
+Extracting Full-Space Features:  66%|█████▉   | 182/274 [00:10<00:04, 18.69it/s]
+Extracting Full-Space Features:  67%|██████   | 184/274 [00:10<00:04, 18.76it/s]
+Extracting Full-Space Features:  68%|██████   | 186/274 [00:10<00:04, 18.91it/s]
+Extracting Full-Space Features:  69%|██████▏  | 188/274 [00:10<00:04, 18.86it/s]
+Extracting Full-Space Features:  69%|██████▏  | 190/274 [00:10<00:04, 18.89it/s]
+Extracting Full-Space Features:  70%|██████▎  | 192/274 [00:11<00:04, 18.93it/s]
+Extracting Full-Space Features:  71%|██████▎  | 194/274 [00:11<00:04, 18.95it/s]
+Extracting Full-Space Features:  72%|██████▍  | 196/274 [00:11<00:04, 18.99it/s]
+Extracting Full-Space Features:  72%|██████▌  | 198/274 [00:11<00:04, 18.71it/s]
+Extracting Full-Space Features:  73%|██████▌  | 200/274 [00:11<00:03, 18.84it/s]
+Extracting Full-Space Features:  74%|██████▋  | 202/274 [00:11<00:03, 18.70it/s]
+Extracting Full-Space Features:  74%|██████▋  | 204/274 [00:11<00:03, 18.90it/s]
+Extracting Full-Space Features:  75%|██████▊  | 206/274 [00:11<00:03, 19.06it/s]
+Extracting Full-Space Features:  76%|██████▊  | 208/274 [00:11<00:03, 19.03it/s]
+Extracting Full-Space Features:  77%|██████▉  | 210/274 [00:11<00:03, 19.10it/s]
+Extracting Full-Space Features:  77%|██████▉  | 212/274 [00:12<00:03, 18.90it/s]
+Extracting Full-Space Features:  78%|███████  | 214/274 [00:12<00:03, 18.61it/s]
+Extracting Full-Space Features:  79%|███████  | 216/274 [00:12<00:03, 18.49it/s]
+Extracting Full-Space Features:  80%|███████▏ | 218/274 [00:12<00:03, 18.42it/s]
+Extracting Full-Space Features:  80%|███████▏ | 220/274 [00:12<00:02, 18.56it/s]
+Extracting Full-Space Features:  81%|███████▎ | 222/274 [00:12<00:02, 18.56it/s]
+Extracting Full-Space Features:  82%|███████▎ | 224/274 [00:12<00:02, 18.59it/s]
+Extracting Full-Space Features:  82%|███████▍ | 226/274 [00:12<00:02, 18.69it/s]
+Extracting Full-Space Features:  83%|███████▍ | 228/274 [00:12<00:02, 18.85it/s]
+Extracting Full-Space Features:  84%|███████▌ | 230/274 [00:13<00:02, 18.84it/s]
+Extracting Full-Space Features:  85%|███████▌ | 232/274 [00:13<00:02, 18.85it/s]
+Extracting Full-Space Features:  85%|███████▋ | 234/274 [00:13<00:02, 18.71it/s]
+Extracting Full-Space Features:  86%|███████▊ | 236/274 [00:13<00:02, 18.60it/s]
+Extracting Full-Space Features:  87%|███████▊ | 238/274 [00:13<00:01, 18.50it/s]
+Extracting Full-Space Features:  88%|███████▉ | 240/274 [00:13<00:01, 18.73it/s]
+Extracting Full-Space Features:  88%|███████▉ | 242/274 [00:13<00:01, 18.74it/s]
+Extracting Full-Space Features:  89%|████████ | 244/274 [00:13<00:01, 18.65it/s]
+Extracting Full-Space Features:  90%|████████ | 246/274 [00:13<00:01, 18.72it/s]
+Extracting Full-Space Features:  91%|████████▏| 248/274 [00:14<00:01, 18.74it/s]
+Extracting Full-Space Features:  91%|████████▏| 250/274 [00:14<00:01, 18.73it/s]
+Extracting Full-Space Features:  92%|████████▎| 252/274 [00:14<00:01, 18.65it/s]
+Extracting Full-Space Features:  93%|████████▎| 254/274 [00:14<00:01, 18.65it/s]
+Extracting Full-Space Features:  93%|████████▍| 256/274 [00:14<00:00, 18.50it/s]
+Extracting Full-Space Features:  94%|████████▍| 258/274 [00:14<00:00, 18.59it/s]
+Extracting Full-Space Features:  95%|████████▌| 260/274 [00:14<00:00, 18.39it/s]
+Extracting Full-Space Features:  96%|████████▌| 262/274 [00:14<00:00, 18.41it/s]
+Extracting Full-Space Features:  96%|████████▋| 264/274 [00:14<00:00, 18.62it/s]
+Extracting Full-Space Features:  97%|████████▋| 266/274 [00:14<00:00, 18.78it/s]
+Extracting Full-Space Features:  98%|████████▊| 268/274 [00:15<00:00, 18.92it/s]
+Extracting Full-Space Features:  99%|████████▊| 270/274 [00:15<00:00, 18.83it/s]
+Extracting Full-Space Features:  99%|████████▉| 272/274 [00:15<00:00, 18.86it/s]
+Extracting Full-Space Features: 100%|█████████| 274/274 [00:15<00:00, 17.80it/s]
+
+[Feature Quality] DrugBank: Center Dist=89.7150, Within Var=5.0323, Ratio=39.9928
+--------------------------------------------------
+[Manifold Analysis] Dataset: DrugBank | Total samples: 35022, Dim: 256
+   Positives: 17511, Negatives: 17511
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.60s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:29:47] STARTING: OOF Prediction Verification (DrugBank)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset DrugBank
+==============================================================================
+[SKIP] OOF predictions already exist for Enzyme: result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+[SKIP] OOF predictions already exist for GPCRs: result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+[SKIP] OOF predictions already exist for ion_channel: result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+[SKIP] OOF predictions already exist for Davis: result/Davis_CV_Seed42/oof_predictions_Davis.csv
+[SKIP] OOF predictions already exist for KIBA: result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+==============================================================================
+[2026-10-24 02:29:51] STARTING: Latent Manifold & Angular Distribution Extraction (DrugBank)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset DrugBank
+==============================================================================
+[ArcMDTI Config] Dataset: DrugBank | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+--------------------------------------------------
+[Manifold Analysis] Dataset: DrugBank | Total samples: 5000, Dim: 256
+   Positives: 5000, Negatives: 0
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.34s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:30:01] STARTING: 5-Fold Warm-Start CV (Enzyme)
+Command: /miniconda3/bin/python3 -u main.py --dataset Enzyme
+==============================================================================
+[ArcMDTI Config] Dataset: Enzyme | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[ArcMDTI 5-Fold Warm-Start CV] Dataset: Enzyme | Folds: 5 | Device: cuda
+
+==================== Fold 1 / 5 (Enzyme) ====================
+[RESUME] Fold 1/5 already completed. Loading ./result/Enzyme_CV_Seed42/fold_1/ROC_PRC_data.npz...
+
+==================== Fold 2 / 5 (Enzyme) ====================
+[RESUME] Fold 2/5 already completed. Loading ./result/Enzyme_CV_Seed42/fold_2/ROC_PRC_data.npz...
+
+==================== Fold 3 / 5 (Enzyme) ====================
+[RESUME] Fold 3/5 already completed. Loading ./result/Enzyme_CV_Seed42/fold_3/ROC_PRC_data.npz...
+
+==================== Fold 4 / 5 (Enzyme) ====================
+[RESUME] Fold 4/5 already completed. Loading ./result/Enzyme_CV_Seed42/fold_4/ROC_PRC_data.npz...
+
+==================== Fold 5 / 5 (Enzyme) ====================
+[RESUME] Fold 5/5 already completed. Loading ./result/Enzyme_CV_Seed42/fold_5/ROC_PRC_data.npz...
+
+★★★★★★★★★★★★★★★★★★★★ SCI FINAL 5-FOLD REPORT (Enzyme) ★★★★★★★★★★★★★★★★★★★★
+AUC   : 0.8457 ± 0.0166
+AUPR  : 0.7880 ± 0.0328
+ACC   : 0.7916 ± 0.0227
+F1    : 0.7997 ± 0.0290
+MCC   : 0.5873 ± 0.0453
+Pre   : 0.7677 ± 0.0312
+Sn    : 0.8366 ± 0.0531
+Sp    : 0.7473 ± 0.0344
+Saved OOF predictions to: ./result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+
+Best Fold Identified: Fold 1. Extracting latent manifold & hyperspherical angles...
+
+Extracting Full-Space Features:   0%|                    | 0/46 [00:00<?, ?it/s]
+Extracting Full-Space Features:   2%|▎           | 1/46 [00:00<00:25,  1.75it/s]
+Extracting Full-Space Features:   7%|▊           | 3/46 [00:00<00:08,  5.24it/s]
+Extracting Full-Space Features:  11%|█▎          | 5/46 [00:00<00:04,  8.23it/s]
+Extracting Full-Space Features:  15%|█▊          | 7/46 [00:00<00:03, 10.57it/s]
+Extracting Full-Space Features:  20%|██▎         | 9/46 [00:01<00:03, 11.94it/s]
+Extracting Full-Space Features:  24%|██▋        | 11/46 [00:01<00:02, 13.02it/s]
+Extracting Full-Space Features:  28%|███        | 13/46 [00:01<00:02, 13.99it/s]
+Extracting Full-Space Features:  33%|███▌       | 15/46 [00:01<00:02, 14.77it/s]
+Extracting Full-Space Features:  37%|████       | 17/46 [00:01<00:01, 15.57it/s]
+Extracting Full-Space Features:  41%|████▌      | 19/46 [00:01<00:01, 16.05it/s]
+Extracting Full-Space Features:  46%|█████      | 21/46 [00:01<00:01, 16.37it/s]
+Extracting Full-Space Features:  50%|█████▌     | 23/46 [00:01<00:01, 16.90it/s]
+Extracting Full-Space Features:  54%|█████▉     | 25/46 [00:01<00:01, 17.21it/s]
+Extracting Full-Space Features:  59%|██████▍    | 27/46 [00:02<00:01, 17.24it/s]
+Extracting Full-Space Features:  63%|██████▉    | 29/46 [00:02<00:00, 17.06it/s]
+Extracting Full-Space Features:  67%|███████▍   | 31/46 [00:02<00:00, 16.65it/s]
+Extracting Full-Space Features:  72%|███████▉   | 33/46 [00:02<00:00, 16.74it/s]
+Extracting Full-Space Features:  76%|████████▎  | 35/46 [00:02<00:00, 16.78it/s]
+Extracting Full-Space Features:  80%|████████▊  | 37/46 [00:02<00:00, 17.06it/s]
+Extracting Full-Space Features:  85%|█████████▎ | 39/46 [00:02<00:00, 17.19it/s]
+Extracting Full-Space Features:  89%|█████████▊ | 41/46 [00:02<00:00, 17.31it/s]
+Extracting Full-Space Features:  93%|██████████▎| 43/46 [00:03<00:00, 17.37it/s]
+Extracting Full-Space Features:  98%|██████████▊| 45/46 [00:03<00:00, 17.44it/s]
+Extracting Full-Space Features: 100%|███████████| 46/46 [00:03<00:00, 14.40it/s]
+
+[Feature Quality] Enzyme: Center Dist=32.0787, Within Var=3.7571, Ratio=16.5497
+--------------------------------------------------
+[Manifold Analysis] Dataset: Enzyme | Total samples: 5840, Dim: 256
+   Positives: 2920, Negatives: 2920
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.23s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:30:16] STARTING: OOF Prediction Verification (Enzyme)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset Enzyme
+==============================================================================
+[SKIP] OOF predictions already exist for Enzyme: result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+[SKIP] OOF predictions already exist for GPCRs: result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+[SKIP] OOF predictions already exist for ion_channel: result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+[SKIP] OOF predictions already exist for Davis: result/Davis_CV_Seed42/oof_predictions_Davis.csv
+[SKIP] OOF predictions already exist for KIBA: result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+==============================================================================
+[2026-10-24 02:30:21] STARTING: Latent Manifold & Angular Distribution Extraction (Enzyme)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset Enzyme
+==============================================================================
+[ArcMDTI Config] Dataset: Enzyme | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+--------------------------------------------------
+[Manifold Analysis] Dataset: Enzyme | Total samples: 5000, Dim: 256
+   Positives: 2920, Negatives: 2080
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.14s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:30:32] STARTING: 5-Fold Warm-Start CV (GPCRs)
+Command: /miniconda3/bin/python3 -u main.py --dataset GPCRs
+==============================================================================
+[ArcMDTI Config] Dataset: GPCRs | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[ArcMDTI 5-Fold Warm-Start CV] Dataset: GPCRs | Folds: 5 | Device: cuda
+
+==================== Fold 1 / 5 (GPCRs) ====================
+[RESUME] Fold 1/5 already completed. Loading ./result/GPCRs_CV_Seed42/fold_1/ROC_PRC_data.npz...
+
+==================== Fold 2 / 5 (GPCRs) ====================
+[RESUME] Fold 2/5 already completed. Loading ./result/GPCRs_CV_Seed42/fold_2/ROC_PRC_data.npz...
+
+==================== Fold 3 / 5 (GPCRs) ====================
+[RESUME] Fold 3/5 already completed. Loading ./result/GPCRs_CV_Seed42/fold_3/ROC_PRC_data.npz...
+
+==================== Fold 4 / 5 (GPCRs) ====================
+[RESUME] Fold 4/5 already completed. Loading ./result/GPCRs_CV_Seed42/fold_4/ROC_PRC_data.npz...
+
+==================== Fold 5 / 5 (GPCRs) ====================
+[RESUME] Fold 5/5 already completed. Loading ./result/GPCRs_CV_Seed42/fold_5/ROC_PRC_data.npz...
+
+★★★★★★★★★★★★★★★★★★★★ SCI FINAL 5-FOLD REPORT (GPCRs) ★★★★★★★★★★★★★★★★★★★★
+AUC   : 0.7140 ± 0.0115
+AUPR  : 0.6754 ± 0.0178
+ACC   : 0.6600 ± 0.0104
+F1    : 0.6818 ± 0.0320
+MCC   : 0.3283 ± 0.0224
+Pre   : 0.6417 ± 0.0248
+Sn    : 0.7359 ± 0.0966
+Sp    : 0.5832 ± 0.0987
+Saved OOF predictions to: ./result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+
+Best Fold Identified: Fold 4. Extracting latent manifold & hyperspherical angles...
+
+Extracting Full-Space Features:   0%|                    | 0/49 [00:00<?, ?it/s]
+Extracting Full-Space Features:   2%|▏           | 1/49 [00:00<00:28,  1.68it/s]
+Extracting Full-Space Features:   6%|▋           | 3/49 [00:00<00:09,  5.11it/s]
+Extracting Full-Space Features:  10%|█▏          | 5/49 [00:00<00:05,  8.12it/s]
+Extracting Full-Space Features:  14%|█▋          | 7/49 [00:00<00:03, 10.63it/s]
+Extracting Full-Space Features:  18%|██▏         | 9/49 [00:01<00:03, 12.75it/s]
+Extracting Full-Space Features:  22%|██▍        | 11/49 [00:01<00:02, 14.41it/s]
+Extracting Full-Space Features:  27%|██▉        | 13/49 [00:01<00:02, 15.58it/s]
+Extracting Full-Space Features:  31%|███▎       | 15/49 [00:01<00:02, 16.49it/s]
+Extracting Full-Space Features:  35%|███▊       | 17/49 [00:01<00:01, 17.08it/s]
+Extracting Full-Space Features:  39%|████▎      | 19/49 [00:01<00:01, 17.32it/s]
+Extracting Full-Space Features:  43%|████▋      | 21/49 [00:01<00:01, 17.80it/s]
+Extracting Full-Space Features:  47%|█████▏     | 23/49 [00:01<00:01, 18.01it/s]
+Extracting Full-Space Features:  51%|█████▌     | 25/49 [00:01<00:01, 18.36it/s]
+Extracting Full-Space Features:  55%|██████     | 27/49 [00:01<00:01, 18.64it/s]
+Extracting Full-Space Features:  59%|██████▌    | 29/49 [00:02<00:01, 18.47it/s]
+Extracting Full-Space Features:  63%|██████▉    | 31/49 [00:02<00:00, 18.67it/s]
+Extracting Full-Space Features:  67%|███████▍   | 33/49 [00:02<00:00, 18.88it/s]
+Extracting Full-Space Features:  71%|███████▊   | 35/49 [00:02<00:00, 18.92it/s]
+Extracting Full-Space Features:  76%|████████▎  | 37/49 [00:02<00:00, 19.11it/s]
+Extracting Full-Space Features:  80%|████████▊  | 39/49 [00:02<00:00, 18.98it/s]
+Extracting Full-Space Features:  84%|█████████▏ | 41/49 [00:02<00:00, 18.96it/s]
+Extracting Full-Space Features:  88%|█████████▋ | 43/49 [00:02<00:00, 19.04it/s]
+Extracting Full-Space Features:  92%|██████████ | 45/49 [00:02<00:00, 19.09it/s]
+Extracting Full-Space Features:  96%|██████████▌| 47/49 [00:03<00:00, 19.11it/s]
+Extracting Full-Space Features: 100%|███████████| 49/49 [00:03<00:00, 15.68it/s]
+
+[Feature Quality] GPCRs: Center Dist=17.9611, Within Var=7.1122, Ratio=6.7349
+--------------------------------------------------
+[Manifold Analysis] Dataset: GPCRs | Total samples: 6197, Dim: 256
+   Positives: 3098, Negatives: 3099
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.63s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:30:48] STARTING: OOF Prediction Verification (GPCRs)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset GPCRs
+==============================================================================
+[SKIP] OOF predictions already exist for Enzyme: result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+[SKIP] OOF predictions already exist for GPCRs: result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+[SKIP] OOF predictions already exist for ion_channel: result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+[SKIP] OOF predictions already exist for Davis: result/Davis_CV_Seed42/oof_predictions_Davis.csv
+[SKIP] OOF predictions already exist for KIBA: result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+==============================================================================
+[2026-10-24 02:30:52] STARTING: Latent Manifold & Angular Distribution Extraction (GPCRs)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset GPCRs
+==============================================================================
+[ArcMDTI Config] Dataset: GPCRs | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+--------------------------------------------------
+[Manifold Analysis] Dataset: GPCRs | Total samples: 5000, Dim: 256
+   Positives: 3098, Negatives: 1902
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.60s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:31:03] STARTING: 5-Fold Warm-Start CV (ion_channel)
+Command: /miniconda3/bin/python3 -u main.py --dataset ion_channel
+==============================================================================
+[ArcMDTI Config] Dataset: ion_channel | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[ArcMDTI 5-Fold Warm-Start CV] Dataset: ion_channel | Folds: 5 | Device: cuda
+
+==================== Fold 1 / 5 (ion_channel) ====================
+[RESUME] Fold 1/5 already completed. Loading ./result/ion_channel_CV_Seed42/fold_1/ROC_PRC_data.npz...
+
+==================== Fold 2 / 5 (ion_channel) ====================
+[RESUME] Fold 2/5 already completed. Loading ./result/ion_channel_CV_Seed42/fold_2/ROC_PRC_data.npz...
+
+==================== Fold 3 / 5 (ion_channel) ====================
+[RESUME] Fold 3/5 already completed. Loading ./result/ion_channel_CV_Seed42/fold_3/ROC_PRC_data.npz...
+
+==================== Fold 4 / 5 (ion_channel) ====================
+[RESUME] Fold 4/5 already completed. Loading ./result/ion_channel_CV_Seed42/fold_4/ROC_PRC_data.npz...
+
+==================== Fold 5 / 5 (ion_channel) ====================
+[RESUME] Fold 5/5 already completed. Loading ./result/ion_channel_CV_Seed42/fold_5/ROC_PRC_data.npz...
+
+★★★★★★★★★★★★★★★★★★★★ SCI FINAL 5-FOLD REPORT (ion_channel) ★★★★★★★★★★★★★★★★★★★★
+AUC   : 0.7860 ± 0.0263
+AUPR  : 0.7381 ± 0.0345
+ACC   : 0.7312 ± 0.0265
+F1    : 0.7388 ± 0.0353
+MCC   : 0.4655 ± 0.0558
+Pre   : 0.7179 ± 0.0329
+Sn    : 0.7656 ± 0.0767
+Sp    : 0.6953 ± 0.0681
+Saved OOF predictions to: ./result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+
+Best Fold Identified: Fold 2. Extracting latent manifold & hyperspherical angles...
+
+Extracting Full-Space Features:   0%|                    | 0/24 [00:00<?, ?it/s]
+Extracting Full-Space Features:   4%|▌           | 1/24 [00:00<00:12,  1.78it/s]
+Extracting Full-Space Features:  12%|█▌          | 3/24 [00:00<00:03,  5.30it/s]
+Extracting Full-Space Features:  21%|██▌         | 5/24 [00:00<00:02,  8.08it/s]
+Extracting Full-Space Features:  29%|███▌        | 7/24 [00:00<00:01, 10.25it/s]
+Extracting Full-Space Features:  38%|████▌       | 9/24 [00:01<00:01, 11.74it/s]
+Extracting Full-Space Features:  46%|█████      | 11/24 [00:01<00:00, 13.00it/s]
+Extracting Full-Space Features:  54%|█████▉     | 13/24 [00:01<00:00, 13.94it/s]
+Extracting Full-Space Features:  62%|██████▉    | 15/24 [00:01<00:00, 14.75it/s]
+Extracting Full-Space Features:  71%|███████▊   | 17/24 [00:01<00:00, 15.48it/s]
+Extracting Full-Space Features:  79%|████████▋  | 19/24 [00:01<00:00, 15.83it/s]
+Extracting Full-Space Features:  88%|█████████▋ | 21/24 [00:01<00:00, 16.00it/s]
+Extracting Full-Space Features:  96%|██████████▌| 23/24 [00:01<00:00, 16.25it/s]
+Extracting Full-Space Features: 100%|███████████| 24/24 [00:01<00:00, 12.51it/s]
+
+[Feature Quality] ion_channel: Center Dist=17.1751, Within Var=1.0163, Ratio=17.0367
+--------------------------------------------------
+[Manifold Analysis] Dataset: ion_channel | Total samples: 2950, Dim: 256
+   Positives: 1475, Negatives: 1475
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.42s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:31:16] STARTING: OOF Prediction Verification (ion_channel)
+Command: /miniconda3/bin/python3 -u predict_oof.py --dataset ion_channel
+==============================================================================
+[SKIP] OOF predictions already exist for Enzyme: result/Enzyme_CV_Seed42/oof_predictions_Enzyme.csv
+[SKIP] OOF predictions already exist for GPCRs: result/GPCRs_CV_Seed42/oof_predictions_GPCRs.csv
+[SKIP] OOF predictions already exist for ion_channel: result/ion_channel_CV_Seed42/oof_predictions_ion_channel.csv
+[SKIP] OOF predictions already exist for Davis: result/Davis_CV_Seed42/oof_predictions_Davis.csv
+[SKIP] OOF predictions already exist for KIBA: result/KIBA_CV_Seed42/oof_predictions_KIBA.csv
+
+==============================================================================
+[2026-10-24 02:31:21] STARTING: Latent Manifold & Angular Distribution Extraction (ion_channel)
+Command: /miniconda3/bin/python3 -u plot_best_features.py --dataset ion_channel
+==============================================================================
+[ArcMDTI Config] Dataset: ion_channel | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+--------------------------------------------------
+[Manifold Analysis] Dataset: ion_channel | Total samples: 2950, Dim: 256
+   Positives: 1475, Negatives: 1475
+
+[1/2] Running UMAP projection...
+[WARNING] UMAP failed (No module named 'umap'), using PCA fallback for UMAP CSV...
+
+[2/2] Running t-SNE projection...
+t-SNE completed in 2.16s
+t-SNE plot & CSV saved successfully.
+--------------------------------------------------
+
+==============================================================================
+[2026-10-24 02:31:30] STARTING: Warm-Start Baseline Models (All 6 Datasets)
+Command: /miniconda3/bin/python3 -u run_all_baselines.py --mode RANDOM
+==============================================================================
+============================================================
+Batch Runner for All Baselines (with Resume Support)
+============================================================
+
+[1/20] [RUN] baseline_DeepDTA.py on Enzyme ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[2/20] [RUN] baseline_DeepDTA.py on GPCRs ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[3/20] [RUN] baseline_DeepDTA.py on ion_channel ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[4/20] [RUN] baseline_DeepDTA.py on Davis ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[5/20] [RUN] baseline_DeepDTA.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[6/20] [RUN] baseline_MPNN.py on Enzyme ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[7/20] [RUN] baseline_MPNN.py on GPCRs ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[8/20] [RUN] baseline_MPNN.py on ion_channel ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[9/20] [RUN] baseline_MPNN.py on Davis ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[10/20] [RUN] baseline_MPNN.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MPNN.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[11/20] [RUN] baseline_MolTrans.py on Enzyme ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[12/20] [RUN] baseline_MolTrans.py on GPCRs ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[13/20] [RUN] baseline_MolTrans.py on ion_channel ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[14/20] [RUN] baseline_MolTrans.py on Davis ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+
+[15/20] [RUN] baseline_MolTrans.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_MolTrans.py", line 41, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+  [WARN] Failed with exit code 1, continuing...
+[16/20] [SKIP] Baseline_DrugBAN on Enzyme (result/Baseline_DrugBAN_Enzyme/oof_predictions_Enzyme.csv)
+[17/20] [SKIP] Baseline_DrugBAN on GPCRs (result/Baseline_DrugBAN_GPCRs/oof_predictions_GPCRs.csv)
+[18/20] [SKIP] Baseline_DrugBAN on ion_channel (result/Baseline_DrugBAN_ion_channel/oof_predictions_ion_channel.csv)
+[19/20] [SKIP] Baseline_DrugBAN on Davis (result/Baseline_DrugBAN_Davis/oof_predictions_Davis.csv)
+
+[20/20] [RUN] baseline_DrugBAN.py on KIBA ...
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DrugBAN.py", line 493, in <module>
+    main()
+  File "/data/ArcDTI/code_new/baseline/baseline_DrugBAN.py", line 229, in main
+    X_d, X_p, y, all_lines = load_your_data(data_path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ArcDTI/code_new/baseline/baseline_DrugBAN.py", line 167, in load_your_data
+    labels.append(int(float(p[2])))
+                      ^^^^^^^^^^^
+ValueError: could not convert string to float: 'CNS(=O)(=O)C1=CC=CC=C1NC2=NC(=NC=C2Cl)NC3=CC(=C(C(=C3)OC)OC)OC'
+  [WARN] Failed with exit code 1, continuing...
+
+============================================================
+All baselines processed! Skipped: 4 | Failed: 16 | Total: 20
+============================================================
+
+==============================================================================
+[2026-10-24 02:32:25] STARTING: Cold-Drug & Cold-Target 5-Fold CV Suite
+Command: /miniconda3/bin/python3 -u run_all_cold.py
+==============================================================================
+========================================================================
+ArcMDTI cold-start runner
+Tasks: 50
+Max retries per task: 2
+========================================================================
+[OVERALL] [------------------------------------]   0.0% (0/50)
+
+[NEXT] 1/50 | ArcMDTI | Enzyme | cold_drug
+[SKIP] ArcMDTI Enzyme cold_drug already completed: /data/ArcDTI/code_new/result/Enzyme_COLD_DRUG_CV_Seed42/Enzyme_final_summary.csv
+[OVERALL] [#-----------------------------------]   2.0% (1/50)
+
+[NEXT] 2/50 | DeepDTA | Enzyme | cold_drug
+========================================================================
+[TASK] DeepDTA | Enzyme | cold_drug | attempt 1/3
+========================================================================
+[RUN] python baseline/baseline_DeepDTA.py Enzyme --split_mode cold_drug
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+[WARN] DeepDTA Enzyme cold_drug did not complete. Return code: 1
+[RETRY] Rerunning the same dataset/mode after 60 seconds...
+========================================================================
+[TASK] DeepDTA | Enzyme | cold_drug | attempt 2/3
+========================================================================
+[RUN] python baseline/baseline_DeepDTA.py Enzyme --split_mode cold_drug
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+[WARN] DeepDTA Enzyme cold_drug did not complete. Return code: 1
+[RETRY] Rerunning the same dataset/mode after 60 seconds...
+========================================================================
+[TASK] DeepDTA | Enzyme | cold_drug | attempt 3/3
+========================================================================
+[RUN] python baseline/baseline_DeepDTA.py Enzyme --split_mode cold_drug
+Traceback (most recent call last):
+  File "/data/ArcDTI/code_new/baseline/baseline_DeepDTA.py", line 42, in <module>
+    from DeepPurpose import DTI as models
+ModuleNotFoundError: No module named 'DeepPurpose'
+[WARN] DeepDTA Enzyme cold_drug did not complete. Return code: 1
+[FAIL] DeepDTA Enzyme cold_drug still incomplete after 3 attempts.
+
+[STOPPED] Current task failed after retries.
+
+==============================================================================
+[2026-10-24 02:34:35] STARTING: Comprehensive Module, Encoder & Loss Ablation Suite
+Command: /miniconda3/bin/python3 -u run_ablation.py --datasets Davis KIBA GPCRs Enzyme
+==============================================================================
+Variants to run: ['full', 'no_arcface', 'no_crossattn', 'no_ss', 'no_focalloss', 'no_gate', 'ce', 'cosface']
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: full | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/full/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/full/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/full/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/full/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/full/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_arcface | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/no_arcface/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/no_arcface/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/no_arcface/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/no_arcface/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/no_arcface/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_crossattn | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/no_crossattn/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/no_crossattn/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/no_crossattn/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/no_crossattn/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/no_crossattn/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_ss | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/no_ss/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/no_ss/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/no_ss/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/no_ss/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/no_ss/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_focalloss | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/no_focalloss/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/no_focalloss/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/no_focalloss/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/no_focalloss/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/no_focalloss/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_gate | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/no_gate/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/no_gate/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/no_gate/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/no_gate/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/no_gate/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: ce | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/ce/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/ce/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/ce/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/ce/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/ce/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: Davis | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: cosface | Dataset: Davis | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_Davis_Seed42/cosface/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_Davis_Seed42/cosface/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_Davis_Seed42/cosface/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_Davis_Seed42/cosface/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_Davis_Seed42/cosface/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: full | Dataset: KIBA | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_KIBA_Seed42/full/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_KIBA_Seed42/full/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_KIBA_Seed42/full/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_KIBA_Seed42/full/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_KIBA_Seed42/full/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_arcface | Dataset: KIBA | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_KIBA_Seed42/no_arcface/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_KIBA_Seed42/no_arcface/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_KIBA_Seed42/no_arcface/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_KIBA_Seed42/no_arcface/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_KIBA_Seed42/no_arcface/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_crossattn | Dataset: KIBA | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_KIBA_Seed42/no_crossattn/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_KIBA_Seed42/no_crossattn/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_KIBA_Seed42/no_crossattn/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_KIBA_Seed42/no_crossattn/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_KIBA_Seed42/no_crossattn/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_ss | Dataset: KIBA | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_KIBA_Seed42/no_ss/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_KIBA_Seed42/no_ss/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_KIBA_Seed42/no_ss/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_KIBA_Seed42/no_ss/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_KIBA_Seed42/no_ss/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_focalloss | Dataset: KIBA | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_KIBA_Seed42/no_focalloss/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_KIBA_Seed42/no_focalloss/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_KIBA_Seed42/no_focalloss/fold_3/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 4 already completed (./result/Ablation_KIBA_Seed42/no_focalloss/fold_4/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 5 already completed (./result/Ablation_KIBA_Seed42/no_focalloss/fold_5/ROC_PRC_data.npz). Loading metrics...
+[ArcMDTI Config] Dataset: KIBA | dim=128, depth=1, heads=4 | lr=0.0003, wd=0.01, bs=128 | ArcFace(s=15.0, m=0.15) + Focal(alpha=0.5, gamma=1.0)
+
+[Ablation Study] Variant: no_gate | Dataset: KIBA | Device: cuda
+[RESUME] Fold 1 already completed (./result/Ablation_KIBA_Seed42/no_gate/fold_1/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 2 already completed (./result/Ablation_KIBA_Seed42/no_gate/fold_2/ROC_PRC_data.npz). Loading metrics...
+[RESUME] Fold 3 already completed (./result/Ablation_KIBA_Seed42/no_gate/fold_3/ROC_PRC_data.npz). Loading metrics...
+
+==================== Fold 4 / 5 (no_gate) ====================
+[RESUME] Restored Fold 4/5 from checkpoint_latest_fold_4.pt (Completed Epoch 1/100, Best Val AUC: 0.8439 at Ep 1, No-improve: 0/25). Continuing at Epoch 2...
+Fold 4/5 | Ep 002/100 | LR: 2.93e-04 | Train [Loss: 0.1488, AUC: 0.6101, AUPR: 0.3227, ACC: 0.7838, F1: 0.3313, MCC: 0.2114] | Val [Loss: 0.0834, AUC: 0.8864, AUPR: 0.7082, ACC: 0.8737, F1: 0.5860, MCC: 0.5403, Pre: 0.7808, Sn: 0.4690, Sp: 0.9690] | Best_AUC: 0.8864 (Ep 2) [*BEST*] (49.7s)
+Fold 4/5 | Ep 003/100 | LR: 2.71e-04 | Train [Loss: 0.1277, AUC: 0.6969, AUPR: 0.4207, ACC: 0.8082, F1: 0.4224, MCC: 0.3147] | Val [Loss: 0.0779, AUC: 0.8961, AUPR: 0.7283, ACC: 0.8777, F1: 0.6136, MCC: 0.5610, Pre: 0.7710, Sn: 0.5095, Sp: 0.9644] | Best_AUC: 0.8961 (Ep 3) [*BEST*] (48.1s)
+Fold 4/5 | Ep 004/100 | LR: 2.38e-04 | Train [Loss: 0.1205, AUC: 0.7357, AUPR: 0.4664, ACC: 0.8139, F1: 0.4510, MCC: 0.3444] | Val [Loss: 0.0800, AUC: 0.8990, AUPR: 0.7341, ACC: 0.8789, F1: 0.6291, MCC: 0.5706, Pre: 0.7559, Sn: 0.5387, Sp: 0.9590] | Best_AUC: 0.8990 (Ep 4) [*BEST*] (48.5s)
